@@ -55,6 +55,12 @@ h2 { font-size: var(--tamanho-titulo) }
 
 h3 { font-size: var(--tamanho-topico) }
 
+h4 {
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-subtitulo);
+    font-weight: 500;
+}
+
 p { 
     font-family: var(--fonte-texto);
     font-size: var(--tamanho-subtitulo);
@@ -65,6 +71,53 @@ p {
     width: 100%;
     display: grid;
     overflow: hidden;
+}
+/* ==================================================================== */
+
+/* NAVBAR */
+
+.navbar-container {
+    width: 1000px;
+    margin: 0 calc(50% - 500px);
+}
+
+.navbar {
+    position: absolute;
+    width: 1000px;
+    height: 60px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-item {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--arredondamento-borda-pq);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal-clara);
+    transition: var(--tempo-transicao);
+}
+
+.nav-item:hover {
+    background-color: var(--cor-principal-escura);
+    color: var(--cor-principal-clara);
+    cursor: pointer;
+}
+
+.nav-item-active {
+    background-color: var(--cor-principal-escura);
+    color: var(--cor-principal-clara);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 /* ==================================================================== */
@@ -123,56 +176,6 @@ p {
     color: var(--cor-principal);
     cursor: pointer;
 }
-
-/* ==================================================================== */
-
-/* NAVBAR */
-
-.navbar-container {
-    width: 1000px;
-    margin: 0 calc(50% - 500px);
-}
-
-.navbar {
-    position: absolute;
-    width: 1000px;
-    height: 60px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.nav-item {
-    width: 150px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--arredondamento-borda-pq);
-    background-color: var(--cor-principal-clara);
-    color: var(--cor-secundaria);
-    font-size: var(--tamanho-subtitulo);
-    font-family: var(--fonte-principal);
-    font-weight: 500;
-    transition: var(--tempo-transicao);
-}
-
-.nav-item:hover {
-    background-color: var(--cor-principal-escura);
-    color: var(--cor-principal-clara);
-    cursor: pointer;
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-}
-
-/* .sticky + .informacoes {
-    padding-top: 100px;
-} */
 
 /* ==================================================================== */
 
@@ -248,7 +251,7 @@ p {
 /* TELA POR ODS */
 
 .por-ods {
-    display: grid;
+    padding: 75px 0;
     grid-template-rows: 1fr 3fr;
     justify-content: center;
     align-items: center;
@@ -298,6 +301,7 @@ p {
 
 .graficos {
     grid-template-rows: 1fr 1fr;
+    padding: 75px 0;
     align-items: center;
     justify-content: center;
     text-align: center;
