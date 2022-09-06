@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!-- Padrão de Caracteres -->
+        <meta charset="UTF-8">
+        <!-- Responsividade (diferentes tamanhos de tela) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Tags para o rôbo de pesquisa encontrar nosso site mais facilmente -->
+        <meta name="description" content="Veja como está o progresso do Brasil em alcançar os Objetivos de Desenvolvimento Saudável, proposto pela ONU. Listamos e organizamos os dados em diversas categorias!">
+        <!-- Titulo da Página -->
+        <title>Sustent.ai</title>
+        <!-- Link do CSS -->
+        <link rel="stylesheet" href="./assets/style.css">
+        <!-- Links do JS -->
+        <script src="./assets/graficos.js" defer></script>
+        <script src="./assets/app.js" defer></script>
+        <!-- Link Icones do FontAwesome -->
+        <script src="https://kit.fontawesome.com/3ad7411d2f.js" crossorigin="anonymous"></script>
+        <!-- Link do Google Charts -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body>
+        <div class="tela inicial">
+            <div class="texto">
+                <div class="logo">
+                    <h1>sustent.ai</h1>
+                </div>
+                <div class="titulos">
+                    <div class="titulo">
+                        <h2>Desempenho do Brasil</h2>
+                    </div>
+                    <div class="subtitulo">
+                        <p>De acordo com o Índice de Desenvolvimento Sustentável das Cidades</p>
+                    </div>
+                </div>
+            </div>
+            <div class="roleta">
+                <img src="./assets/img/circulo.svg" class="roleta-ods rotacionar" alt="">
+            </div>
+            <div class="seta-baixo">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </div>
+        <div class="navbar-container">
+            <ul class="navbar" id="navbar">
+                <li class="nav-item">home</li>
+                <li class="nav-item">info</li>
+                <li class="nav-item">geral</li>
+                <li class="nav-item">ods</li>
+                <li class="nav-item">gráficos</li>
+                <li class="nav-item">ranking</li>
+            </ul>
+        </div>
+        <div class="tela informacoes">
+            <div class="info">
+                <div class="item-info">
+                    <div class="titulo-item-info">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Visão Geral</h3>
+                    </div>
+                    <p>O Índice de Desenvolvimento Sustentável das Cidades – Brasil (IDSC-BR) apresenta uma avaliação abrangente da distância para se atingir as metas e objetivos da Agenda 2030 nos 5.570 municípios brasileiros, com base nos dados mais atualizados disponíveis nas fontes nacionais e oficiais. A intenção é orientar a ação política de prefeitos e prefeitas, definir referências e metas com base em indicadores e facilitar o monitoramento dos ODS em nível local. Há uma pontuação para cada objetivo e outra para o conjunto dos 17 ODS, de modo que seja possível avaliar os progressos e desafios dos municípios brasileiros para o cumprimento da Agenda 2030.</p>
+                </div>
+                <div class="item-info">
+                    <div class="titulo-item-info">
+                        <i class="fa-solid fa-person"></i>
+                        <h3>Quem Faz</h3>
+                    </div>
+                    <p>O Índice de Desenvolvimento Sustentável das Cidades é uma iniciativa do Instituto Cidades Sustentáveis, no âmbito do Programa Cidades Sustentáveis, realizada em parceria com a Sustainable Development Solution Network (SDSN). O IDSC-BR conta com apoio do Projeto Citinova, do Ministério da Ciência, Tecnologia e Inovações (MCTI), do Programa das Nações Unidas para o Meio Ambiente e do Fundo Global para o Meio Ambiente (GEF na sigla em inglês). A coleta de dados e indicadores foi realizada pelo Centro Brasileiro de Análise e Planejamento (Cebrap).</p>
+                </div>
+                <div class="item-info">
+                    <div class="titulo-item-info">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <h3>Indicadores</h3>
+                    </div>
+                    <p>Contemplam áreas como saúde, educação, renda, moradia, assistência social, igualdade de cor e gênero, acesso à água e ao esgotamento sanitário, energia, segurança pública, emissões e diversas outras. Associados e agrupados por ODS, eles permitem que se obtenha uma pontuação específica por objetivo e outra geral, para o conjunto dos 17 compromissos estabelecidos pela ONU em 2015. 
+                    Os indicadores foram aplicados a todos os municípios para gerar pontuações e classificações comparáveis. Os pontos são atribuídos no intervalo de 0 a 100 e podem ser interpretados como a porcentagem do desempenho ótimo.</p>
+                </div>
+                <div class="item-info">
+                    <div class="titulo-item-info">
+                        <i class="fa-solid fa-clipboard"></i>
+                        <h3>Metodologia</h3>
+                    </div>
+                    <p>A metodologia do IDSC-BR foi elaborada pela rede SDSN (UN Sustainable Development Solution Network), uma iniciativa da ONU para mobilizar conhecimentos técnicos e científicos da academia, da sociedade civil e do setor privado no apoio de soluções em escalas locais, nacionais e globais. Lançada em 2012, a SDSN já desenvolveu índices para diversos países e cidades do mundo. Articulada em redes, a SDSN conta hoje com mais de 40 grupos nacionais e regionais, sendo dois deles no Brasil (um de caráter nacional e outro dedicado à Amazônia).</p>
+                </div>
+            </div>
+        </div>
+        <div class="tela desempenho-geral">
+            <div class="mapa-brasil">
+                <img src="./assets/img/mapa-brasil.svg" alt="">
+            </div>
+            <div class="texto-desempenho-geral">
+                <h3>No Brasil,</h3>
+                <div class="topicos">
+                    <p>0 cidades (0%) atingiram o nível muito alto de desenvolvimento (80 pontos ou mais)</p>
+                    <p>113 cidades (2%) atingiram o nível alto de desenvolvimento (60 a 79,99 pontos)
+                    </p>
+                    <p>1.566 cidades (28%) atingiram o nível médio de desenvolvimento (50 a 59,99 pontos)</p>
+                    <p>3.139 cidades (56%) atingiram o nível baixo de desenvolvimento (40 a 49,99 pontos)</p>
+                    <p>752 cidades (14%) atingiram o nível muito baixo de desenvolvimento (0 a 39,99 pontos)</p>
+                </div>
+            </div>
+        </div>
+        <div class="tela por-ods">
+            <div class="titulo-por-ods">
+                <h3>1. Erradicação da Pobreza</h3>
+                <p>Acabar com a pobreza em todas as suas formas, em todos os lugares.</p>
+            </div>
+            <div class="todas-ods">
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+                <div class="ods">
+                    <div class="icone-ods"><h3>1</h3></div>
+                    <p class="legenda-ods">40,0%</p>
+                </div>
+            </div>
+        </div>
+        <div class="tela graficos">
+            <div class="por-regiao">
+                <h3 class="titulo-grafico">Por Região</h3>
+                <div  id="por-regiao"></div>
+            </div>
+            <div class="por-estado">
+                <h3 class="titulo-grafico">Por Estado</h3>
+                <div id="por-estado"></div>
+            </div>
+        </div>
+        <div class="tela ranking">
+            <div class="maiores-pontuacoes">
+                <h3>Maiores Pontuações</h3>
+                <div class="tabela">
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                    <div class="linha">
+                        <div class="cidade">
+                            <p>Nome Cidade</p>
+                        </div>
+                        <div class="porcentagem">
+                            <p>10%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menores-pontuacoes">
+                <h3>Menores Pontuações</h3>
+                <div class="tabela">
+                    <div class="tabela">
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="linha">
+                            <div class="cidade">
+                                <p>Nome Cidade</p>
+                            </div>
+                            <div class="porcentagem">
+                                <p>10%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
