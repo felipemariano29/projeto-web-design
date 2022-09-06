@@ -1,10 +1,48 @@
 const
     navbar = document.getElementById("navbar"),
+    setaBaixo = document.getElementById("seta-baixo"),
     navItens = document.querySelectorAll(".nav-item"),
-    setaBaixo = document.getElementById("seta-baixo");
+    todasOds = document.getElementById("todas-ods"),
+    tituloPorOds = document.getElementById("titulo-por-ods")
 
 let
     altura = 983;
+
+import { ods } from "./dados.js";
+
+for(let i=0;i<ods.length;i++){
+    let 
+        divOds = document.createElement('div'),
+        divIconeOds = document.createElement('div'),
+        legendaOds = document.createElement('p'),
+        img = document.createElement('img'),
+        tituloOds = document.createElement('h3'),
+        descricaoOds = document.createElement('p')
+
+    divOds.classList.add('ods');
+    divIconeOds.classList.add('container-ods');
+    legendaOds.classList.add('legenda-ods');
+    img.src = ods[i].icone;
+    img.classList.add('icone-ods')
+
+    divOds.appendChild(divIconeOds);
+    divOds.appendChild(legendaOds);
+    
+    divIconeOds.appendChild(img);
+    legendaOds.textContent = ods[i].pontos;
+
+    divOds.addEventListener("click", () => {
+        tituloPorOds.innerHTML = '';
+
+        tituloPorOds.appendChild(tituloOds);
+        tituloPorOds.appendChild(descricaoOds);
+
+        tituloOds.textContent = ods[i].titulo;
+        descricaoOds.textContent = ods[i].descricao + '.';
+    })
+
+    todasOds.appendChild(divOds);
+}
 
 setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = 1*altura})
 

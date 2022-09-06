@@ -41,6 +41,8 @@
 /* Faz com que a página sempre ocupe toda a tela */
 html, body { height: 100vh }
 
+html { scroll-behavior: smooth }
+
 body {
     background: var(--cor-principal-clara);
     display: grid;
@@ -251,18 +253,23 @@ p {
 /* TELA POR ODS */
 
 .por-ods {
-    padding: 75px 0;
-    grid-template-rows: 1fr 3fr;
+    padding: 50px 0;
+    grid-template-rows: 1fr 2fr;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.titulo-por-ods h3 { color: var(--cor-principal-escura) }
+.titulo-por-ods h3 {
+    color: var(--cor-principal-escura);
+    height: 50px;
+    margin-bottom: 20px;
+}
 
 .titulo-por-ods p {
     color: var(--cor-principal);
-    width: 515px;
+    height: 100px;
+    width: 1100px;
     margin: 0 auto;
 }
 
@@ -278,21 +285,33 @@ p {
     padding-left: 20px;
 }
 
-.icone-ods {
+.container-ods {
     width: 160px;
     height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms;
     border-radius: var(--arredondamento-borda-pq);
     background-color: var(--cor-principal);
     color: var(--cor-principal-clara);
 }
 
-.icone-ods h3 {
-    font-size: var(--tamanho-titulo);
-    padding-top: calc(50% - 46px);
+.container-ods:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.icone-ods {
+    width: 100px;
+    height: 100px;
+    filter: invert(95%) sepia(4%) saturate(1309%) hue-rotate(35deg) brightness(99%) contrast(99%);
 }
 
 .legenda-ods {
-    font-size: var(--tamanho-texto-corrido);
+    font-size: 18px;
+    margin-right: 20px;
+    margin-top: 5px;
 }
 
 /* ==================================================================== */
