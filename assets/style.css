@@ -38,6 +38,10 @@
     list-style: none;
 }
 
+*:hover {
+    cursor: default;
+}
+
 /* Faz com que a página sempre ocupe toda a tela */
 html, body { height: 100vh }
 
@@ -48,6 +52,8 @@ body {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
 }
+
+body::-webkit-scrollbar { display: none }
 
 h1, h2, h3 { font-family: var(--fonte-principal) }
 
@@ -111,6 +117,8 @@ p {
     cursor: pointer;
 }
 
+.nav-item h4:hover { cursor: pointer; }
+
 .nav-item-active {
     background-color: var(--cor-principal-escura);
     color: var(--cor-principal-clara);
@@ -138,7 +146,8 @@ p {
 .titulos {
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    margin-top: 30px;
+    row-gap: 5px;
     color: var(--cor-principal);
 }
 
@@ -179,6 +188,8 @@ p {
     cursor: pointer;
 }
 
+.seta-baixo i:hover { cursor: pointer }
+
 /* ==================================================================== */
 
 /* TELA INFORMAÇÕES */
@@ -186,6 +197,7 @@ p {
 .informacoes {
     background-image: radial-gradient(circle, #30440d, #32460e, #33490f, #354b10, #374e11, #374d11, #364c10, #364b10, #33470f, #30430e, #2d3f0d, #2a3b0c);
     align-items: center;
+    padding-top: 50px;
 }
 
 .info {
@@ -225,7 +237,7 @@ p {
 
 .desempenho-geral {
     grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+    column-gap: 60px;
     align-items: center;
     padding: 0 100px;
     color: var(--cor-principal);
@@ -234,11 +246,16 @@ p {
 .mapa-brasil img {
     height: auto;
     width: 600px;
+    transition: 500ms;
+}
+
+.mapa-brasil img:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .texto-desempenho-geral {
     display: flex;
-    width: 1060px;
+    width: 1100px;
     flex-direction: column;
     row-gap: 60px;
 }
@@ -248,6 +265,24 @@ p {
     flex-direction: column;
     row-gap: 50px;
     font-size: calc(var(--tamanho-subtitulo) - 20%);
+}
+
+.container-topicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    padding: 0 5px;
+    background-color: var(--cor-principal);
+    color: var(--cor-principal-clara);
+    border-radius: var(--arredondamento-borda-pq);
+    transition: var(--tempo-transicao);
+}
+
+.container-topicos:hover {
+    background-color: var(--cor-principal-escura);
+    transform: scale(1.05);
+    cursor: default;
 }
 
 /* ==================================================================== */
@@ -312,6 +347,8 @@ p {
     height: 100px;
     filter: invert(95%) sepia(4%) saturate(1309%) hue-rotate(35deg) brightness(99%) contrast(99%);
 }
+
+.icone-ods:hover { cursor: pointer }
 
 .legenda-ods {
     color: var(--cor-principal);
@@ -399,10 +436,13 @@ p {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--cor-principal-clara);
+    transition: 300ms;
 }
 
 .linha:hover {
     background-color: var(--cor-principal-escura);
+    transform: scale(1.1);
+    cursor: default;
 }
 
 .pontuacao {
@@ -411,6 +451,161 @@ p {
     padding-left: 30px;
     height: 100%;
     border-left: 1px solid var(--cor-principal-clara);
+}
+
+/* ==================================================================== */
+
+/* RODAPÉ */
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 50vh;
+    width: 100%;
+    background-color: var(--cor-principal-escura);
+    color: var(--cor-principal-clara);
+}
+
+footer h4 { font-family: var(--fonte-texto) }
+
+footer .contato {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 400px;
+}
+
+footer input {
+    height: 50px;
+    width: 100%;
+    padding: 5px 15px 0;
+    background-color: var(--cor-principal-clara);
+    border-radius: 5px;
+    border: none;
+    transition: var(--tempo-transicao);
+    font-size: 20px;
+    color: var(--cor-secundaria);
+}
+
+footer textarea {
+    height: 200px;
+    width: 100%;
+    resize: none;
+    padding: 15px 15px 0;
+    background-color: var(--cor-principal-clara);
+    border-radius: 5px;
+    border: none;
+    font-family: var(--fonte-texto);
+    transition: var(--tempo-transicao);
+    font-size: 20px;
+    color: var(--cor-secundaria);
+}
+
+footer input:hover,
+footer textarea:hover {
+    cursor: text;
+}
+
+footer input::placeholder,
+footer textarea::placeholder {
+    font-size: 20px;
+    color: var(--cor-secundaria);
+}
+
+footer input:focus,
+footer textarea:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+footer button {
+    height: 50px;
+    width: 100%;
+    background-color: var(--cor-principal);
+    color: var(--cor-principal-clara);
+    font-size: var(--tamanho-texto-corrido);
+    border-radius: 5px;
+    border: none;
+    transition: var(--tempo-transicao);
+}
+
+footer button:hover {
+    cursor: pointer;
+}
+
+footer button:active {
+    transform: scale(0.95);
+}
+
+.voltar-ao-topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-botao-topo {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-botao-topo:hover,
+.container-botao-topo div:hover,
+.container-botao-topo i:hover,
+.container-botao-topo h4:hover { cursor: pointer }
+
+.botao-topo {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-principal-clara);
+    color: var(--cor-principal);
+    border-radius: var(--arredondamento-borda-pq);
+    transition: var(--tempo-transicao);
+    -webkit-animation: seta-balancar 2s infinite;
+    -moz-animation: seta-balancar 2s infinite;
+    -ms-animation: seta-balancar 2s infinite;
+    -o-animation: seta-balancar 2s infinite;
+    animation: seta-balancar 2s infinite;
+}
+
+.nav-rodape {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar-rodape {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    row-gap: 40px;
+    column-gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-rodape .nav-item { height: 60px }
+
+.navbar-rodape .nav-item:hover {
+    background-color: var(--cor-principal-clara);
+    color: var(--cor-principal);
 }
 
 /* ==================================================================== */

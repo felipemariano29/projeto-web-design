@@ -28,9 +28,11 @@ const
     tabelas = document.querySelectorAll(".tabelas"),
     informacoes = document.getElementById("informacoes"),
     topicos = document.getElementById("topicos"),
+    topoBtn = document.getElementById("topoBtn"),
     altura = 950;
 
-setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura + 33})
+setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura + 33});
+topoBtn.addEventListener("click", () => {document.documentElement.scrollTop = 0});
 
 function navbarFunc() {
     let alt = altura + 33;
@@ -44,13 +46,13 @@ function navbarFunc() {
             else if(e.innerText==="ranking") document.documentElement.scrollTop = 5*alt;
         })
     })
-}
+};
 
 function removeCorNav() {
     for(let i=0;i<navItens.length;i++) {
         navItens[i].classList.remove("nav-item-active");
     }
-}
+};
 
 function verificaAltura() {
     if(window.scrollY < altura){
@@ -77,7 +79,13 @@ function verificaAltura() {
         removeCorNav();
         navItens[5].classList.add("nav-item-active");
     }
-}
+    if(window.scrollY > (altura*6) - 500){
+        navbar.style.display = "none";
+    }
+    if(window.scrollY < (altura*6) - 500){
+        navbar.style.display = "flex";
+    }
+};
 
 function sempreNoTopo() {
     if (window.pageYOffset > (altura + 33)) {
@@ -85,7 +93,7 @@ function sempreNoTopo() {
     } else {
         navbar.classList.remove("sticky");
     }
-}
+};
 
 function geraItemInfo() {
     let info = document.createElement("div");
@@ -114,19 +122,23 @@ function geraItemInfo() {
 
         informacoes.appendChild(info);
     }
-}
+};
 
 function geraTopicoGeral() {
     for(let i=0;i<desempenhoGeral.length;i++){
-        const p = document.createElement("p");
+        const 
+            p = document.createElement("p"),
+            div = document.createElement("div");
 
+        div.classList.add("container-topicos")
         p.classList.add("topicos")
-    
+
         p.textContent = desempenhoGeral[i].topico + '.'
 
-        topicos.appendChild(p);
+        div.appendChild(p);
+        topicos.appendChild(div);
     }
-}
+};
 
 function odsFunc() {
     for(let i=0;i<ods.length;i++){
@@ -171,50 +183,7 @@ function odsFunc() {
         todasOds.appendChild(divOds);
 
     }
-}
-
-// function desenhaGrafico() {
-//     google.charts.load("current", {packages:['corechart']});
-
-//     for(let i=0;i<graficos.length;i++){
-//         google.charts.setOnLoadCallback(geraGrafico);
-    
-//         function geraGrafico() {
-//             let 
-//                 dados = google.visualization.arrayToDataTable(graficos[i].dados),
-//                 visualizacao = new google.visualization.DataView(dados),
-//                 largura,
-//                 opcoes,
-//                 grafico = new google.visualization.ColumnChart(document.getElementById(graficos[i].id));
-    
-//             visualizacao.setColumns([0, 1,
-//                                         { 
-//                                             calc: "stringify",
-//                                             sourceColumn: 1,
-//                                             type: "string",
-//                                             role: "tooltip", 
-//                                             'p': {'html': true}
-//                                         },
-//                                     2]);
-//             if(graficos[i].id === 'por-regiao'){
-//                 largura = 700;
-//             } else if (graficos[i].id === 'por-estado'){
-//                 largura = 1500;
-//             }
-//             opcoes = {
-//                 width: largura,
-//                 height: 450,
-//                 bar: {groupWidth: "60%"},
-//                 colors: ['#FFD700'],
-//                 legend: { position: "none" },
-//                 backgroundColor: "transparent",
-//                 focusTarget: 'category',
-//                 tooltip: {isHtml: true}
-//             }
-//             grafico.draw(visualizacao, opcoes);
-//         }
-//     }
-// }
+};
 
 function desenhaGrafico() {
 
@@ -294,4 +263,4 @@ function geraTabela() {
             tabelas[i].appendChild(tabela);
         }
     }
-}
+};

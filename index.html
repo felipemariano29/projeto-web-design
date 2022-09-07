@@ -12,9 +12,9 @@
         <!-- Link do CSS -->
         <link rel="stylesheet" href="./assets/style.css">
         <!-- Links do JS -->
-        <script type="module" src="./assets/dados.js" defer></script>
-        <script type="module" src="./assets/funcoes.js" defer></script>
-        <script type="module" src="./assets/app.js" defer></script>
+        <script type="module" src="./assets/js/dados.js" defer></script>
+        <script type="module" src="./assets/js/funcoes.js" defer></script>
+        <script type="module" src="./assets/js/app.js" defer></script>
         <!-- Link Icones do FontAwesome -->
         <script src="https://kit.fontawesome.com/3ad7411d2f.js" crossorigin="anonymous"></script>
         <!-- Link do Chart.JS -->
@@ -32,12 +32,12 @@
                         <h2>Desempenho do Brasil</h2>
                     </div>
                     <div class="subtitulo">
-                        <p>De acordo com o Índice de Desenvolvimento Sustentável das Cidades</p>
+                        <p>de acordo com o Índice de Desenvolvimento Sustentável das Cidades</p>
                     </div>
                 </div>
             </div>
             <div class="roleta">
-                <img src="./assets/img/circulo.svg" class="roleta-ods rotacionar" alt="">
+                <img src="./assets/img/circulo.png" class="roleta-ods rotacionar" alt="">
             </div>
             <div class="seta-baixo" id="seta-baixo">
                 <i class="fa-solid fa-arrow-down"></i>
@@ -91,4 +91,33 @@
             <div class="menores-pontuacoes tabelas"></div>
         </div>
     </body>
+    <footer>
+        <div class="voltar-ao-topo">
+            <div class="container-botao-topo" id="topoBtn">
+                <div class="botao-topo">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <h4>Volte ao Topo</h4>
+            </div>
+        </div>
+        <div class="nav-rodape">
+            <h4>Navegação</h4>
+            <ul class="navbar-rodape" id="navbar">
+                <li class="nav-item"><h4>home</h4></li>
+                <li class="nav-item"><h4>info</h4></li>
+                <li class="nav-item"><h4>geral</h4></li>
+                <li class="nav-item"><h4>ods</h4></li>
+                <li class="nav-item"><h4>gráficos</h4></li>
+                <li class="nav-item"><h4>ranking</h4></li>
+            </ul>
+        </div>
+        <div class="contato">
+            <h4>Contato</h4>
+            <form action="mailto:email@teste.com">
+                <input type="email" placeholder="Digite seu e-mail">
+                <textarea name="" placeholder="Insira sua mensagem aqui!"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </footer>
 </html>
