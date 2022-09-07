@@ -468,57 +468,58 @@ footer {
 
 footer h4 { font-family: var(--fonte-texto) }
 
-footer .contato {
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
+footer .contato { flex-direction: column }
 
 footer form {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 30px;
     width: 400px;
+}
+
+.container-botao-topo,
+.voltar-ao-topo,
+.botao-topo,
+.nav-rodape,
+.navbar-rodape,
+footer .contato {
+    display: flex;
+    row-gap: 40px;
+    column-gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer textarea,
+footer button,
+footer input {
+    font-size: var(--tamanho-texto-corrido);
+    font-family: var(--fonte-texto);
+    border-radius: var(--arredondamento-borda-pq);
+    border: none;
+    transition: var(--tempo-transicao);
 }
 
 footer input {
     height: 50px;
-    width: 100%;
-    padding: 5px 15px 0;
+    padding: 0 15px;
     background-color: var(--cor-principal-clara);
-    border-radius: 5px;
-    border: none;
-    transition: var(--tempo-transicao);
-    font-size: 20px;
     color: var(--cor-secundaria);
 }
 
 footer textarea {
     height: 200px;
-    width: 100%;
     resize: none;
-    padding: 15px 15px 0;
+    padding: 15px 15px;
     background-color: var(--cor-principal-clara);
-    border-radius: 5px;
-    border: none;
-    font-family: var(--fonte-texto);
-    transition: var(--tempo-transicao);
-    font-size: 20px;
     color: var(--cor-secundaria);
 }
 
 footer input:hover,
-footer textarea:hover {
-    cursor: text;
-}
+footer textarea:hover { cursor: text }
 
 footer input::placeholder,
-footer textarea::placeholder {
-    font-size: 20px;
-    color: var(--cor-secundaria);
-}
+footer textarea::placeholder { color: var(--cor-secundaria) }
 
 footer input:focus,
 footer textarea:focus {
@@ -528,35 +529,13 @@ footer textarea:focus {
 
 footer button {
     height: 50px;
-    width: 100%;
     background-color: var(--cor-principal);
     color: var(--cor-principal-clara);
-    font-size: var(--tamanho-texto-corrido);
-    border-radius: 5px;
-    border: none;
-    transition: var(--tempo-transicao);
 }
 
-footer button:hover {
-    cursor: pointer;
-}
+footer button:hover { cursor: pointer }
 
-footer button:active {
-    transform: scale(0.95);
-}
-
-.voltar-ao-topo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-botao-topo {
-    display: flex;
-    column-gap: 20px;
-    align-items: center;
-    justify-content: center;
-}
+footer button:active { transform: scale(0.95) }
 
 .container-botao-topo:hover,
 .container-botao-topo div:hover,
@@ -567,9 +546,7 @@ footer button:active {
     display: flex;
     width: 80px;
     height: 80px;
-    font-size: 45px;
-    align-items: center;
-    justify-content: center;
+    font-size: var(--tamanho-topico);
     background-color: var(--cor-principal-clara);
     color: var(--cor-principal);
     border-radius: var(--arredondamento-borda-pq);
@@ -584,21 +561,11 @@ footer button:active {
 .nav-rodape {
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
-    width: 100%;
-    margin: auto;
 }
 
 .navbar-rodape {
     display: grid;
     grid-template-columns: repeat(3, 2fr);
-    row-gap: 40px;
-    column-gap: 40px;
-    justify-content: center;
-    align-items: center;
 }
 
 .navbar-rodape .nav-item { height: 60px }
