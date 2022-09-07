@@ -225,18 +225,20 @@ p {
 
 .desempenho-geral {
     grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
     align-items: center;
+    padding: 0 100px;
     color: var(--cor-principal);
 }
 
 .mapa-brasil img {
-    height: 750px;
-    width: 100%;
+    height: auto;
+    width: 600px;
 }
 
 .texto-desempenho-geral {
     display: flex;
-    width: 750px;
+    width: 1060px;
     flex-direction: column;
     row-gap: 60px;
 }
@@ -244,8 +246,8 @@ p {
 .topicos {
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    font-size: var(--tamanho-subtitulo);
+    row-gap: 50px;
+    font-size: calc(var(--tamanho-subtitulo) - 20%);
 }
 
 /* ==================================================================== */
@@ -298,9 +300,12 @@ p {
 }
 
 .container-ods:hover {
+    background-color: var(--cor-principal-escura);
     cursor: pointer;
     transform: scale(1.1);
 }
+
+.container-ods-selecionado { background-color: var(--cor-principal-escura) }
 
 .icone-ods {
     width: 100px;
@@ -309,7 +314,9 @@ p {
 }
 
 .legenda-ods {
-    font-size: 18px;
+    color: var(--cor-principal);
+    font-size: 16px;
+    font-weight: 600;
     margin-right: 20px;
     margin-top: 5px;
 }
@@ -320,15 +327,27 @@ p {
 
 .graficos {
     grid-template-rows: 1fr 1fr;
-    padding: 75px 0;
+    padding: 80px 0;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--cor-principal);
 }
 
+.graficos h3 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
 #por-regiao {
     width: 700px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#por-estado {
+    width: 1500px;
+    height: 300px;
     margin: 0 auto;
 }
 
@@ -344,7 +363,7 @@ p {
 }
 
 .ranking h3 {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: var(--cor-principal);
 }
 
@@ -362,6 +381,7 @@ p {
     border-radius: 20px;
     color: var(--cor-principal-clara);
     background-color: var(--cor-principal);
+    overflow: hidden;
 }
 
 .tabela p {
@@ -379,6 +399,10 @@ p {
     align-items: center;
     justify-content: center;
     border: 1px solid var(--cor-principal-clara);
+}
+
+.linha:hover {
+    background-color: var(--cor-principal-escura);
 }
 
 .pontuacao {

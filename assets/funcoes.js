@@ -1,6 +1,7 @@
 import {
             ods,
             infoDados,
+            desempenhoGeral,
             graficos,
             ranking
 
@@ -12,6 +13,7 @@ export {
             verificaAltura,
             sempreNoTopo,
             geraItemInfo,
+            geraTopicoGeral,
             odsFunc,
             desenhaGrafico,
             geraTabela
@@ -25,6 +27,7 @@ const
     tituloPorOds = document.getElementById("titulo-por-ods"),
     tabelas = document.querySelectorAll(".tabelas"),
     informacoes = document.getElementById("informacoes"),
+    topicos = document.getElementById("topicos"),
     altura = 950;
 
 setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura + 33})
@@ -113,6 +116,18 @@ function geraItemInfo() {
     }
 }
 
+function geraTopicoGeral() {
+    for(let i=0;i<desempenhoGeral.length;i++){
+        const p = document.createElement("p");
+
+        p.classList.add("topicos")
+    
+        p.textContent = desempenhoGeral[i].topico + '.'
+
+        topicos.appendChild(p);
+    }
+}
+
 function odsFunc() {
     for(let i=0;i<ods.length;i++){
         let 
@@ -127,7 +142,7 @@ function odsFunc() {
         divIconeOds.classList.add('container-ods');
         legendaOds.classList.add('legenda-ods');
         img.src = ods[i].icone;
-        img.classList.add('icone-ods')
+        img.classList.add('icone-ods');
 
         divOds.appendChild(divIconeOds);
         divOds.appendChild(legendaOds);
@@ -135,56 +150,117 @@ function odsFunc() {
         divIconeOds.appendChild(img);
         legendaOds.textContent = ods[i].pontos;
 
+        if(i === 0) divIconeOds.classList.add('container-ods-selecionado');
+
         divOds.addEventListener("click", () => {
             tituloPorOds.innerHTML = '';
+
+            for(let i=0; i<ods.length;i++){
+                todasOds.children[i].children[0].classList.remove('container-ods-selecionado');
+            }
+            divIconeOds.classList.add('container-ods-selecionado');
 
             tituloPorOds.appendChild(tituloOds);
             tituloPorOds.appendChild(descricaoOds);
 
             tituloOds.textContent = i+1 + '. ' + ods[i].titulo;
             descricaoOds.textContent = ods[i].descricao + '.';
+
         })
 
         todasOds.appendChild(divOds);
+
     }
 }
+
+// function desenhaGrafico() {
+//     google.charts.load("current", {packages:['corechart']});
+
+//     for(let i=0;i<graficos.length;i++){
+//         google.charts.setOnLoadCallback(geraGrafico);
+    
+//         function geraGrafico() {
+//             let 
+//                 dados = google.visualization.arrayToDataTable(graficos[i].dados),
+//                 visualizacao = new google.visualization.DataView(dados),
+//                 largura,
+//                 opcoes,
+//                 grafico = new google.visualization.ColumnChart(document.getElementById(graficos[i].id));
+    
+//             visualizacao.setColumns([0, 1,
+//                                         { 
+//                                             calc: "stringify",
+//                                             sourceColumn: 1,
+//                                             type: "string",
+//                                             role: "tooltip", 
+//                                             'p': {'html': true}
+//                                         },
+//                                     2]);
+//             if(graficos[i].id === 'por-regiao'){
+//                 largura = 700;
+//             } else if (graficos[i].id === 'por-estado'){
+//                 largura = 1500;
+//             }
+//             opcoes = {
+//                 width: largura,
+//                 height: 450,
+//                 bar: {groupWidth: "60%"},
+//                 colors: ['#FFD700'],
+//                 legend: { position: "none" },
+//                 backgroundColor: "transparent",
+//                 focusTarget: 'category',
+//                 tooltip: {isHtml: true}
+//             }
+//             grafico.draw(visualizacao, opcoes);
+//         }
+//     }
+// }
 
 function desenhaGrafico() {
-    google.charts.load("current", {packages:['corechart']});
 
     for(let i=0;i<graficos.length;i++){
-        google.charts.setOnLoadCallback(geraGrafico);
-    
-        function geraGrafico() {
-            let 
-                dados = google.visualization.arrayToDataTable(graficos[i].dados),
-                visualizacao = new google.visualization.DataView(dados),
-                largura,
-                opcoes,
-                grafico = new google.visualization.ColumnChart(document.getElementById(graficos[i].id));
-    
-            visualizacao.setColumns([0, 1,
-                                        { calc: "stringify",
-                                        sourceColumn: 1,
-                                        type: "string",
-                                        role: "annotation" },
-                                    2]);
-            if(graficos[i].id === 'por-regiao'){
-                largura = 700;
-            } else if (graficos[i].id === 'por-estado'){
-                largura = 1500;
+        const data = {
+            labels: graficos[i].nome,
+            datasets: [{
+            label: 'Pontuação',
+            backgroundColor: '#30440D',
+            borderColor: '#30440D',
+            color: '30440D',
+            data: graficos[i].valor,
+            }]
+        };
+        
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                            y: {
+                                beginAtZero: false
+                                }
+                        },
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        backgroundColor: '#5F361C',
+                        titleColor: '#E6F4CD',
+                        bodyColor: '#E6F4CD',
+                        displayColors: false,
+                    }
+                }
             }
-            opcoes = {
-                width: largura,
-                height: 300,
-                bar: {groupWidth: "60%"},
-                legend: { position: "none" },
-                backgroundColor: "transparent"
-            }
-            grafico.draw(visualizacao, opcoes);
-        }
+        };
+        
+        const grafico = new Chart(
+            document.getElementById(graficos[i].id),
+            config
+        );
     }
-}
+};
 
 function geraTabela() {
     for(let i=0;i<ranking.length;i++){

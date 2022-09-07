@@ -17,8 +17,9 @@
         <script type="module" src="./assets/app.js" defer></script>
         <!-- Link Icones do FontAwesome -->
         <script src="https://kit.fontawesome.com/3ad7411d2f.js" crossorigin="anonymous"></script>
-        <!-- Link do Google Charts -->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <!-- Link do Chart.JS -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
     </head>
     <body>
         <div class="tela inicial">
@@ -60,13 +61,7 @@
             </div>
             <div class="texto-desempenho-geral">
                 <h3>No Brasil,</h3>
-                <div class="topicos">
-                    <p>0 cidades (0%) atingiram o nível muito alto de desenvolvimento (80 pontos ou mais)</p>
-                    <p>113 cidades (2%) atingiram o nível alto de desenvolvimento (60 a 79,99 pontos)
-                    </p>
-                    <p>1.566 cidades (28%) atingiram o nível médio de desenvolvimento (50 a 59,99 pontos)</p>
-                    <p>3.139 cidades (56%) atingiram o nível baixo de desenvolvimento (40 a 49,99 pontos)</p>
-                    <p>752 cidades (14%) atingiram o nível muito baixo de desenvolvimento (0 a 39,99 pontos)</p>
+                <div class="topicos" id="topicos">
                 </div>
             </div>
         </div>
@@ -80,11 +75,15 @@
         <div class="tela graficos">
             <div class="por-regiao">
                 <h3 class="titulo-grafico">Por Região</h3>
-                <div id="por-regiao"></div>
+            <div>
+                <canvas id="por-regiao"></canvas>
+            </div>
             </div>
             <div class="por-estado">
                 <h3 class="titulo-grafico">Por Estado</h3>
-                <div id="por-estado"></div>
+            <div>
+                <canvas id="por-estado"></canvas>
+            </div>
             </div>
         </div>
         <div class="tela ranking">

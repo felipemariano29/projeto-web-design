@@ -3,6 +3,7 @@ import {
             verificaAltura,
             sempreNoTopo,
             geraItemInfo,
+            geraTopicoGeral,
             odsFunc,
             desenhaGrafico,
             geraTabela
@@ -17,6 +18,8 @@ window.onscroll = () => {
 }
 
 geraItemInfo();
+
+geraTopicoGeral();
 
 odsFunc();
 

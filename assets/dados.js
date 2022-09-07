@@ -142,53 +142,36 @@ const
             'icone': ['fa-solid', 'fa-clipboard']
         }
     ],
+    desempenhoGeral = [
+        {'topico': '0 cidades (0%) atingiram o nível muito alto de desenvolvimento (80 pontos ou mais)'},
+        {'topico': '113 cidades (2%) atingiram o nível alto de desenvolvimento (60 a 79,99 pontos)'},
+        {'topico': '1.566 cidades (28%) atingiram o nível médio de desenvolvimento (50 a 59,99 pontos)'},
+        {'topico': '3.139 cidades (56%) atingiram o nível baixo de desenvolvimento (40 a 49,99 pontos)'},
+        {'topico': '752 cidades (14%) atingiram o nível muito baixo de desenvolvimento (0 a 39,99 pontos)'}
+    ],
     graficos = [
         {
             'titulo': 'Região',
             'id': 'por-regiao',
-            'dados': 
+            'nome': 
                 [
-                    ["Região", "Pontos", { role: "style" } ],
-                    ["Sul", 40, "#30440D"],
-                    ["Sudeste", 88, "#30440D"],
-                    ["Norte", 60, "#30440D"],
-                    ["Nordeste", 99, "#30440D"],
-                    ["Centro Oeste", 13, "#30440D"]
-                ]
+                    ["Norte"],
+                    ["Nordeste"],
+                    ["Centro-Oeste"],
+                    ["Sul"],
+                    ["Sudeste"]
+                ],
+            'valor': [39.62, 42.21, 46.77, 49.86, 51.92]
         },
         {
             'titulo': 'Estado',
             'id': 'por-estado',
-            'dados': 
+            'nome': 
                 [
-                    ["Estado", "Pontos", { role: "style" } ],
-                    ["AC", 40, "#30440D"],
-                    ["AL", 88, "#30440D"],
-                    ["AP", 60, "#30440D"],
-                    ["AM", 99, "#30440D"],
-                    ["BA", 37, "#30440D"],
-                    ["CE", 38, "#30440D"],
-                    ["ES", 45, "#30440D"],
-                    ["GO", 22, "#30440D"],
-                    ["MA", 78, "#30440D"],
-                    ["MT", 54, "#30440D"],
-                    ["MS", 40, "#30440D"],
-                    ["MG", 18, "#30440D"],
-                    ["PA", 77, "#30440D"],
-                    ["PB", 25, "#30440D"],
-                    ["PR", 63, "#30440D"],
-                    ["PI", 78, "#30440D"],
-                    ["RJ", 23, "#30440D"],
-                    ["RN", 15, "#30440D"],
-                    ["RS", 86, "#30440D"],
-                    ["RO", 45, "#30440D"],
-                    ["RR", 65, "#30440D"],
-                    ["SC", 67, "#30440D"],
-                    ["SP", 23, "#30440D"],
-                    ["SE", 18, "#30440D"],
-                    ["TO", 47, "#30440D"],
-                    ["DF", 13, "#30440D"]
-                ]
+                    ["PA"],["AM"],["MA"],["RR"],["AC"],["AP"],["AL"],["SE"],["TO"],["BA"],["RO"],["PI"],
+                    ["PE"],["PB"],["RN"],["CE"],["MT"],["GO"],["MS"],["RJ"],["MG"],["RS"],["SC"],["ES"],  ["PR"],["SP"],["DF"]
+                ],
+                'valor': [37.11, 38.05, 38.24, 39.07, 39.61, 39.97, 41.15, 41.42, 41.88, 42.42, 42.50, 42.64, 42.74, 42.99, 43.25, 44.34, 44.95, 47.19, 48.58, 49.09, 49.17, 49.25, 49.90, 50.28, 50.60, 56.16, 57.52]
         }
     ],
     ranking = [
@@ -305,4 +288,10 @@ const
     ];
 
 
-export { ods, infoDados, graficos, ranking };
+export { 
+            ods,
+            infoDados,
+            desempenhoGeral,
+            graficos,
+            ranking
+        };
