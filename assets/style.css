@@ -7,10 +7,15 @@
 /* Variáveis padrões na raiz da folha de estilo */
 :root {
     /* Cores */
-    --cor-principal: hsl(82, 68%, 16%);
+    --cor-principal: #418FDE;
+    --cor-principal-clara: #DDF2FF;
+    --cor-principal-escura: #82C4FF;
+    --cor-secundaria: #3F4756;
+
+    /* --cor-principal: hsl(82, 68%, 16%);
     --cor-principal-clara: hsl(82, 64%, 88%);
     --cor-principal-escura:	hsl(82, 66%, 8%);
-    --cor-secundaria: hsl(23, 54%, 24%);
+    --cor-secundaria: hsl(23, 54%, 24%); */
 
     /* Estilo das fontes */
     --fonte-principal: 'Lora', serif;
@@ -48,7 +53,7 @@ html, body { height: 100vh }
 html { scroll-behavior: smooth }
 
 body {
-    background-image: radial-gradient(circle, #e6f4cd, #e6f5ca, #e5f7c7, #e5f8c3, #e5f9c0, #e4f9be, #e3fabb, #e2fab9, #e0f9b6, #dff8b4, #ddf7b1, #dcf6ae);
+    background: radial-gradient(circle, rgba(221,242,255,1) 0%, rgba(211,237,252,1) 100%);
     display: grid;
     grid-template-rows: repeat(6, 1fr);
 }
@@ -86,12 +91,12 @@ p {
 
 .navbar-container {
     width: 1000px;
-    margin: 0 calc(50% - 500px);
+    margin: 0 calc(50% - 525px);
 }
 
 .navbar {
     position: absolute;
-    width: 1000px;
+    width: 1050px;
     height: 60px;
     margin-top: 30px;
     display: flex;
@@ -100,11 +105,12 @@ p {
 }
 
 .nav-item {
-    width: 150px;
+    width: 160px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: capitalize;
     border-radius: var(--arredondamento-borda-pq);
     background-color: var(--cor-secundaria);
     color: var(--cor-principal-clara);
@@ -117,7 +123,7 @@ p {
     cursor: pointer;
 }
 
-.nav-item h4:hover { cursor: pointer; }
+.nav-item h4:hover { cursor: pointer }
 
 .nav-item-active {
     background-color: var(--cor-principal-escura);
@@ -135,6 +141,8 @@ p {
 /* TELA INICIAL */
 
 .inicial { grid-template-columns: 1fr 2fr }
+
+.logo { color: var(--cor-principal-escura) }
 
 .texto {
     display: grid;
@@ -195,7 +203,7 @@ p {
 /* TELA INFORMAÇÕES */
 
 .informacoes {
-    background-image: radial-gradient(circle, #30440d, #32460e, #33490f, #354b10, #374e11, #374d11, #364c10, #364b10, #33470f, #30430e, #2d3f0d, #2a3b0c);
+    background: radial-gradient(circle, rgba(65,143,222,1) 0%, rgba(61,136,212,1) 100%);
     align-items: center;
     padding-top: 50px;
 }
@@ -345,7 +353,8 @@ p {
 .icone-ods {
     width: 100px;
     height: 100px;
-    filter: invert(95%) sepia(4%) saturate(1309%) hue-rotate(35deg) brightness(99%) contrast(99%);
+    filter: invert(89%) sepia(4%) saturate(2113%) hue-rotate(185deg) brightness(104%) contrast(105%);
+    /* filter: invert(95%) sepia(4%) saturate(1309%) hue-rotate(35deg) brightness(99%) contrast(99%); */
 }
 
 .icone-ods:hover { cursor: pointer }
@@ -462,7 +471,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     height: 50vh;
     width: 100%;
-    background-color: var(--cor-principal-escura);
+    background-color: var(--cor-principal);
     color: var(--cor-principal-clara);
 }
 
@@ -529,8 +538,8 @@ footer textarea:focus {
 
 footer button {
     height: 50px;
-    background-color: var(--cor-principal);
-    color: var(--cor-principal-clara);
+    background-color: var(--cor-principal-escura);
+    color: var(--cor-principal);
 }
 
 footer button:hover { cursor: pointer }

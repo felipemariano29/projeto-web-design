@@ -38,12 +38,12 @@ function navbarFunc() {
     let alt = altura + 33;
     navItens.forEach(e => {
         e.addEventListener('click', () => {
-            if(e.innerText==="home") document.documentElement.scrollTop = 0*alt;
-            else if(e.innerText==="info") document.documentElement.scrollTop = 1*alt;
-            else if(e.innerText==="geral") document.documentElement.scrollTop = 2*alt;
-            else if(e.innerText==="ods") document.documentElement.scrollTop = 3*alt;
-            else if(e.innerText==="gráficos") document.documentElement.scrollTop = 4*alt;
-            else if(e.innerText==="ranking") document.documentElement.scrollTop = 5*alt;
+            if(e.innerText==="Home") document.documentElement.scrollTop = 0*alt;
+            else if(e.innerText==="Info") document.documentElement.scrollTop = 1*alt;
+            else if(e.innerText==="Geral") document.documentElement.scrollTop = 2*alt;
+            else if(e.innerText==="ODS") document.documentElement.scrollTop = 3*alt;
+            else if(e.innerText==="Gráficos") document.documentElement.scrollTop = 4*alt;
+            else if(e.innerText==="Ranking") document.documentElement.scrollTop = 5*alt;
         })
     })
 };
@@ -192,9 +192,9 @@ function desenhaGrafico() {
             labels: graficos[i].nome,
             datasets: [{
             label: 'Pontuação',
-            backgroundColor: '#30440D',
-            borderColor: '#30440D',
-            color: '30440D',
+            backgroundColor: '#418FDE',
+            borderColor: '#418FDE',
+            color: '#418FDE',
             data: graficos[i].valor,
             }]
         };
@@ -215,9 +215,9 @@ function desenhaGrafico() {
                         display: false,
                     },
                     tooltip: {
-                        backgroundColor: '#5F361C',
-                        titleColor: '#E6F4CD',
-                        bodyColor: '#E6F4CD',
+                        backgroundColor: '#3F4756',
+                        titleColor: '#DDF2FF',
+                        bodyColor: '#DDF2FF',
                         displayColors: false,
                     }
                 }
