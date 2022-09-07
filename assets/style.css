@@ -44,7 +44,7 @@ html, body { height: 100vh }
 html { scroll-behavior: smooth }
 
 body {
-    background: var(--cor-principal-clara);
+    background-image: radial-gradient(circle, #e6f4cd, #e6f5ca, #e5f7c7, #e5f8c3, #e5f9c0, #e4f9be, #e3fabb, #e2fab9, #e0f9b6, #dff8b4, #ddf7b1, #dcf6ae);
     display: grid;
     grid-template-rows: repeat(6, 1fr);
 }
@@ -184,7 +184,7 @@ p {
 /* TELA INFORMAÇÕES */
 
 .informacoes {
-    background-color: var(--cor-principal);
+    background-image: radial-gradient(circle, #30440d, #32460e, #33490f, #354b10, #374e11, #374d11, #364c10, #364b10, #33470f, #30430e, #2d3f0d, #2a3b0c);
     align-items: center;
 }
 
@@ -366,22 +366,25 @@ p {
 
 .tabela p {
     font-weight: 600;
+    font-size: 24px;
 }
 
 .linha {
-    display: flex;
-    column-gap: 200px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     height: 65px;
     width: 600px;
+    padding-left: 50px;
+    text-align: left;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--cor-principal-clara);
 }
 
-.porcentagem {
+.pontuacao {
     display: flex;
     align-items: center;
-    padding-left: 40px;
+    padding-left: 30px;
     height: 100%;
     border-left: 1px solid var(--cor-principal-clara);
 }
