@@ -471,7 +471,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     height: 50vh;
     width: 100%;
-    background-color: var(--cor-principal);
+    background: radial-gradient(circle, rgba(65,143,222,1) 0%, rgba(61,136,212,1) 100%);
     color: var(--cor-principal-clara);
 }
 
