@@ -21,14 +21,14 @@ export {
 
 const
     navbar = document.getElementById("navbar"),
+    navItens = document.querySelectorAll("nav a"),
     setaBaixo = document.getElementById("seta-baixo"),
-    navItens = document.querySelectorAll(".nav-item"),
-    todasOds = document.getElementById("todas-ods"),
-    tituloPorOds = document.getElementById("titulo-por-ods"),
+    listaOds = document.getElementById("lista-ods"),
+    tituloOds = document.getElementById("titulo-ods"),
     tabelas = document.querySelectorAll(".tabelas"),
-    informacoes = document.getElementById("informacoes"),
+    informacoes = document.getElementById("info"),
     topicos = document.getElementById("topicos"),
-    topoBtn = document.getElementById("topoBtn"),
+    topoBtn = document.getElementById("topo-btn"),
     altura = 950;
 
 setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura + 33});
@@ -50,34 +50,34 @@ function navbarFunc() {
 
 function removeCorNav() {
     for(let i=0;i<navItens.length;i++) {
-        navItens[i].classList.remove("nav-item-active");
+        navItens[i].classList.remove("active");
     }
 };
 
 function verificaAltura() {
     if(window.scrollY < altura){
         removeCorNav();
-        navItens[0].classList.add("nav-item-active");
+        navItens[0].classList.add("active");
     }
     if(altura < window.scrollY && window.scrollY < (altura*2)){
         removeCorNav();
-        navItens[1].classList.add("nav-item-active");
+        navItens[1].classList.add("active");
     }
     if((altura*2) < window.scrollY && window.scrollY < (altura*3)){
         removeCorNav();
-        navItens[2].classList.add("nav-item-active");
+        navItens[2].classList.add("active");
     }
     if((altura*3) < window.scrollY && window.scrollY < (altura*4)){
         removeCorNav();
-        navItens[3].classList.add("nav-item-active");
+        navItens[3].classList.add("active");
     }
     if((altura*4) < window.scrollY && window.scrollY < (altura*5)){
         removeCorNav();
-        navItens[4].classList.add("nav-item-active");
+        navItens[4].classList.add("active");
     }
     if((altura*5) < window.scrollY && window.scrollY < (altura*6)){
         removeCorNav();
-        navItens[5].classList.add("nav-item-active");
+        navItens[5].classList.add("active");
     }
     if(window.scrollY > (altura*6) - 500){
         navbar.style.display = "none";
@@ -96,31 +96,26 @@ function sempreNoTopo() {
 };
 
 function geraItemInfo() {
-    let info = document.createElement("div");
     for(let i=0;i<4;i++){
         let
-            itemInfo = document.createElement("div"),
-            containerTituloItem = document.createElement("div"),
-            iconeItem = document.createElement("i"),
-            tituloItem = document.createElement("h3"),
-            textoItem = document.createElement("p");
+            article = document.createElement("article"),
+            articleHead = document.createElement("head"),
+            icon = document.createElement("i"),
+            articleTitle = document.createElement("h3"),
+            articleText = document.createElement("p");
 
-        info.classList.add("info");
-        itemInfo.classList.add("item-info");
-        containerTituloItem.classList.add("titulo-item-info");
-        iconeItem.classList.add(infoDados[i].icone[0]);
-        iconeItem.classList.add(infoDados[i].icone[1]);
+        icon.classList.add(infoDados[i].icone[0]);
+        icon.classList.add(infoDados[i].icone[1]);
 
-        info.appendChild(itemInfo);
-        itemInfo.appendChild(containerTituloItem);
-        containerTituloItem.appendChild(iconeItem);
-        containerTituloItem.appendChild(tituloItem);
-        itemInfo.appendChild(textoItem);
+        article.appendChild(articleHead);
+        articleHead.appendChild(icon);
+        articleHead.appendChild(articleTitle);
+        article.appendChild(articleText);
 
-        tituloItem.textContent = infoDados[i].titulo;
-        textoItem.textContent = infoDados[i].descricao;
+        articleTitle.textContent = infoDados[i].titulo;
+        articleText.textContent = infoDados[i].descricao;
 
-        informacoes.appendChild(info);
+        informacoes.appendChild(article);
     }
 };
 
@@ -128,59 +123,50 @@ function geraTopicoGeral() {
     for(let i=0;i<desempenhoGeral.length;i++){
         const 
             p = document.createElement("p"),
-            div = document.createElement("div");
-
-        div.classList.add("container-topicos")
-        p.classList.add("topicos")
+            li = document.createElement("li");
 
         p.textContent = desempenhoGeral[i].topico + '.'
 
-        div.appendChild(p);
-        topicos.appendChild(div);
+        li.appendChild(p);
+        topicos.appendChild(li);
     }
 };
 
 function odsFunc() {
     for(let i=0;i<ods.length;i++){
         let 
-            divOds = document.createElement('div'),
-            divIconeOds = document.createElement('div'),
-            legendaOds = document.createElement('p'),
+            titulo = document.createElement('h3'),
+            descricao = document.createElement('p'),
+            li = document.createElement('li'),
+            button = document.createElement('button'),
+            icone = document.createElement('figure'),
             img = document.createElement('img'),
-            tituloOds = document.createElement('h3'),
-            descricaoOds = document.createElement('p')
+            pontos = document.createElement('p');
 
-        divOds.classList.add('ods');
-        divIconeOds.classList.add('container-ods');
-        legendaOds.classList.add('legenda-ods');
+        button.type = "button";
         img.src = ods[i].icone;
-        img.classList.add('icone-ods');
-
-        divOds.appendChild(divIconeOds);
-        divOds.appendChild(legendaOds);
+        pontos.textContent = ods[i].pontos;
         
-        divIconeOds.appendChild(img);
-        legendaOds.textContent = ods[i].pontos;
+        icone.appendChild(img);
+        
+        button.appendChild(icone);
 
-        if(i === 0) divIconeOds.classList.add('container-ods-selecionado');
+        li.appendChild(button);
+        li.appendChild(pontos);
+        
+        if(i === 0) button.autofocus = true;
 
-        divOds.addEventListener("click", () => {
-            tituloPorOds.innerHTML = '';
+        button.addEventListener("click", () => {
+            tituloOds.innerHTML = '';
 
-            for(let i=0; i<ods.length;i++){
-                todasOds.children[i].children[0].classList.remove('container-ods-selecionado');
-            }
-            divIconeOds.classList.add('container-ods-selecionado');
-
-            tituloPorOds.appendChild(tituloOds);
-            tituloPorOds.appendChild(descricaoOds);
-
-            tituloOds.textContent = i+1 + '. ' + ods[i].titulo;
-            descricaoOds.textContent = ods[i].descricao + '.';
-
+            titulo.textContent = i+1 + '. ' + ods[i].titulo;
+            descricao.textContent = ods[i].descricao + '.';
+            
+            tituloOds.appendChild(titulo);
+            tituloOds.appendChild(descricao);
         })
 
-        todasOds.appendChild(divOds);
+        listaOds.appendChild(li);
 
     }
 };
@@ -234,33 +220,27 @@ function desenhaGrafico() {
 function geraTabela() {
     for(let i=0;i<ranking.length;i++){
         let
-                tituloTabela = document.createElement('h3'),
-                tabela = document.createElement('div')
+                titulo = document.createElement('h3'),
+                tabela = document.createElement('table');
+
         for(let j=0;j<ranking[i].dados.length;j++){
             let
-                linha = document.createElement('div'),
-                cidade = document.createElement('div'),
-                pontuacao = document.createElement('div'),
-                nomeCidade = document.createElement('p'),
-                numPontuacao = document.createElement('p');
+                linha = document.createElement('tr'),
+                cidade = document.createElement('p'),
+                pontuacao = document.createElement('p');
 
-            tabela.classList.add('tabela');
-            linha.classList.add('linha');
-            cidade.classList.add('cidade');
             pontuacao.classList.add('pontuacao');
 
-            tabela.appendChild(linha);
             linha.appendChild(cidade);
             linha.appendChild(pontuacao);
-            cidade.appendChild(nomeCidade);
-            pontuacao.appendChild(numPontuacao);
+            tabela.appendChild(linha);
 
-            tituloTabela.textContent = ranking[i].titulo
-            nomeCidade.textContent = ranking[i].dados[j].nome + ' (' + ranking[i].dados[j].estado + ')';
-            numPontuacao.textContent = ranking[i].dados[j].pontuação;
+            titulo.textContent = ranking[i].titulo;
+            cidade.textContent = ranking[i].dados[j].nome + ' (' + ranking[i].dados[j].estado + ')';
+            pontuacao.textContent = ranking[i].dados[j].pontuação;
 
-            tabelas[i].appendChild(tituloTabela);
+            tabelas[i].appendChild(titulo);
             tabelas[i].appendChild(tabela);
-        }
-    }
+        };
+    };
 };

@@ -152,7 +152,7 @@ const
     graficos = [
         {
             'titulo': 'Região',
-            'id': 'por-regiao',
+            'id': 'regiao',
             'nome': 
                 [
                     ["Norte"],
@@ -165,7 +165,7 @@ const
         },
         {
             'titulo': 'Estado',
-            'id': 'por-estado',
+            'id': 'estado',
             'nome': 
                 [
                     ["PA"],["AM"],["MA"],["RR"],["AC"],["AP"],["AL"],["SE"],["TO"],["BA"],["RO"],["PI"],

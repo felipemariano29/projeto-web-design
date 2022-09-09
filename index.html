@@ -3,121 +3,115 @@
     <head>
         <!-- Padrão de Caracteres -->
         <meta charset="UTF-8">
-        <!-- Responsividade (diferentes tamanhos de tela) -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Tags para o rôbo de pesquisa encontrar nosso site mais facilmente -->
-        <meta name="description" content="Veja como está o progresso do Brasil em alcançar os Objetivos de Desenvolvimento Saudável, proposto pela ONU. Listamos e organizamos os dados em diversas categorias!">
         <!-- Titulo da Página -->
         <title>Sustent.ai</title>
         <!-- Link do CSS -->
         <link rel="stylesheet" href="./assets/style.css">
-        <!-- Links do JS -->
-        <script type="module" src="./assets/js/dados.js" defer></script>
-        <script type="module" src="./assets/js/funcoes.js" defer></script>
-        <script type="module" src="./assets/js/app.js" defer></script>
+        <!-- Responsividade (diferentes tamanhos de tela) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Tags para o rôbo de pesquisa encontrar nosso site mais facilmente -->
+        <meta name="description" content="Veja como está o progresso do Brasil em alcançar os Objetivos de Desenvolvimento Saudável, proposto pela ONU. Listamos e organizamos os dados em diversas categorias!">
         <!-- Link Icones do FontAwesome -->
         <script src="https://kit.fontawesome.com/3ad7411d2f.js" crossorigin="anonymous"></script>
         <!-- Link do Chart.JS -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         
     </head>
+    <header>
+        <section>
+            <article>
+                <figure>
+                    <img src="./assets/img/logo.svg" id="logo" alt="logotipo-sustentai">
+                </figure>
+                <h2>Desempenho do Brasil</h2>
+                <p>De acordo com o Índice de Desenvolvimento Sustentável das Cidades</p>
+            </article>
+            <aside>
+                <figure>
+                    <img src="./assets/img/circulo.png" class="rotacionar" alt="circulo-icones-ods">
+                </figure>
+            </aside>
+        </section>
+        <button id="seta-baixo"><i class="fa-solid fa-arrow-down"></i></button>
+        <nav id="navbar">
+            <a>home</a>
+            <a>info</a>
+            <a>geral</a>
+            <a>ODS</a>
+            <a>gráficos</a>
+            <a>ranking</a>
+        </nav>
+    </header>
     <body>
-        <div class="tela inicial">
-            <div class="texto">
-                <div class="logo">
-                    <h1>sustent.ai</h1>
-                </div>
-                <div class="titulos">
-                    <div class="titulo">
-                        <h2>Desempenho do Brasil</h2>
-                    </div>
-                    <div class="subtitulo">
-                        <p>de acordo com o Índice de Desenvolvimento Sustentável das Cidades</p>
-                    </div>
-                </div>
-            </div>
-            <div class="roleta">
-                <img src="./assets/img/circulo.png" class="roleta-ods rotacionar" alt="">
-            </div>
-            <div class="seta-baixo" id="seta-baixo">
-                <i class="fa-solid fa-arrow-down"></i>
-            </div>
-        </div>
-        <div class="navbar-container">
-            <ul class="navbar" id="navbar">
-                <li class="nav-item"><h4>home</h4></li>
-                <li class="nav-item"><h4>info</h4></li>
-                <li class="nav-item"><h4>geral</h4></li>
-                <li class="nav-item"><h4>ODS</h4></li>
-                <li class="nav-item"><h4>gráficos</h4></li>
-                <li class="nav-item"><h4>ranking</h4></li>
-            </ul>
-        </div>
-        <div class="tela informacoes" id="informacoes">
-        </div>
-        <div class="tela desempenho-geral">
-            <div class="mapa-brasil">
-                <img src="./assets/img/mapa-brasil.svg" alt="">
-            </div>
-            <div class="texto-desempenho-geral">
-                <h3>No Brasil,</h3>
-                <div class="topicos" id="topicos">
-                </div>
-            </div>
-        </div>
-        <div class="tela por-ods">
-            <div class="titulo-por-ods" id="titulo-por-ods">
+        <section id="info">
+        </section>
+        <section id="geral">
+            <aside>
+                <figure>
+                    <img src="./assets/img/mapa-brasil.svg" alt="">
+                </figure>
+            </aside>
+            <article>
+                    <h3>No Brasil,</h3>
+                    <ul id="topicos">
+                    </ul>
+            </article>
+        </section>
+        <section id="ods">
+            <article id="titulo-ods">
                 <h3>1. Erradicação da Pobreza</h3>
                 <p>Acabar com a pobreza em todas as suas formas, em todos os lugares.</p>
-            </div>
-            <div class="todas-ods" id="todas-ods"></div>
-        </div>
-        <div class="tela graficos">
-            <div class="por-regiao">
-                <h3 class="titulo-grafico">Por Região</h3>
-            <div>
-                <canvas id="por-regiao"></canvas>
-            </div>
-            </div>
-            <div class="por-estado">
-                <h3 class="titulo-grafico">Por Estado</h3>
-            <div>
-                <canvas id="por-estado"></canvas>
-            </div>
-            </div>
-        </div>
-        <div class="tela ranking">
-            <div class="maiores-pontuacoes tabelas"></div>
-            <div class="menores-pontuacoes tabelas"></div>
-        </div>
+            </article>
+            <ul id="lista-ods"></ul>
+        </section>
+        <section id="graficos">
+            <article>
+                <h3>Por Região</h3>
+                <div>
+                    <canvas id="regiao"></canvas>
+                </div>
+            </article>
+            <article>
+                <h3>Por Estado</h3>
+                <div>
+                    <canvas id="estado"></canvas>
+                </div>
+            </article>
+        </section>
+        <section id="ranking">
+            <article class="tabelas"></article>
+            <article class="tabelas"></article>
+        </section>
+        <!-- Links do JS -->
+        <script type="module" src="./assets/js/dados.js"></script>
+        <script type="module" src="./assets/js/funcoes.js"></script>
+        <script type="module" src="./assets/js/app.js"></script>
     </body>
     <footer>
-        <div class="voltar-ao-topo">
-            <div class="container-botao-topo" id="topoBtn">
-                <div class="botao-topo">
-                    <i class="fa-solid fa-arrow-up"></i>
-                </div>
+        <article>
+            <button id="topo-btn">
+                <i class="fa-solid fa-arrow-up"></i>
                 <h4>Volte ao Topo</h4>
-            </div>
-        </div>
-        <div class="nav-rodape">
+            </button>
+        </article>
+        <article id="nav-rodape">
             <h4>Navegação</h4>
-            <ul class="navbar-rodape" id="navbar">
-                <li class="nav-item"><h4>home</h4></li>
-                <li class="nav-item"><h4>info</h4></li>
-                <li class="nav-item"><h4>geral</h4></li>
-                <li class="nav-item"><h4>ODS</h4></li>
-                <li class="nav-item"><h4>gráficos</h4></li>
-                <li class="nav-item"><h4>ranking</h4></li>
-            </ul>
-        </div>
-        <div class="contato">
+            <nav id="navbar">
+                <a>home</a>
+                <a>info</a>
+                <a>geral</a>
+                <a>ODS</a>
+                <a>gráficos</a>
+                <a>ranking</a>
+            </nav>
+        </article>
+        <article id="contato">
             <h4>Contato</h4>
             <form action="mailto:email@teste.com">
                 <input type="email" placeholder="Digite seu e-mail">
                 <textarea name="" placeholder="Insira sua mensagem aqui!"></textarea>
                 <button type="submit">Enviar</button>
             </form>
-        </div>
+        </article>
     </footer>
 </html>
