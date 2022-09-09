@@ -31,6 +31,7 @@ const
     topoBtn = document.getElementById("topo-btn"),
     altura = 950;
 
+window.addEventListener("load", () => {document.documentElement.scrollTop = 0})
 setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura + 33});
 topoBtn.addEventListener("click", () => {document.documentElement.scrollTop = 0});
 

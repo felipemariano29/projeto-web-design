@@ -128,12 +128,12 @@ const
         },
         {
             'titulo': 'Quem Faz',
-            'descricao' : 'CO Índice de Desenvolvimento Sustentável das Cidades é uma iniciativa do Instituto Cidades Sustentáveis, no âmbito do Programa Cidades Sustentáveis, realizada em parceria com a Sustainable Development Solution Network (SDSN). O IDSC-BR conta com apoio do Projeto Citinova, do Ministério da Ciência, Tecnologia e Inovações (MCTI), do Programa das Nações Unidas para o Meio Ambiente e do Fundo Global para o Meio Ambiente (GEF na sigla em inglês). A coleta de dados e indicadores foi realizada pelo Centro Brasileiro de Análise e Planejamento (Cebrap).',
+            'descricao' : 'O Índice de Desenvolvimento Sustentável das Cidades é uma iniciativa do Instituto Cidades Sustentáveis, no âmbito do Programa Cidades Sustentáveis, realizada em parceria com a Sustainable Development Solution Network (SDSN). O IDSC-BR conta com apoio do Projeto Citinova, do Ministério da Ciência, Tecnologia e Inovações (MCTI), do Programa das Nações Unidas para o Meio Ambiente e do Fundo Global para o Meio Ambiente (GEF na sigla em inglês). A coleta de dados e indicadores foi realizada pelo Centro Brasileiro de Análise e Planejamento (Cebrap).',
             'icone': ['fa-solid', 'fa-person']
         },
         {
             'titulo': 'Indicadores',
-            'descricao' : 'O Índice de Desenvolvimento Sustentável das Cidades – Brasil (IDSC-BR) apresenta uma avaliação abrangente da distância para se atingir as metas e objetivos da Agenda 2030 nos 5.570 municípios brasileiros, com base nos dados mais atualizados disponíveis nas fontes nacionais e oficiais. A intenção é orientar a ação política de prefeitos e prefeitas, definir referências e metas com base em indicadores e facilitar o monitoramento dos ODS em nível local. Há uma pontuação para cada objetivo e outra para o conjunto dos 17 ODS, de modo que seja possível avaliar os progressos e desafios dos municípios brasileiros para o cumprimento da Agenda 2030.',
+            'descricao' : 'Contemplam áreas como saúde, educação, renda, moradia, assistência social, igualdade de cor e gênero, acesso à água e ao esgotamento sanitário, energia, segurança pública, emissões e diversas outras. Associados e agrupados por ODS, eles permitem que se obtenha uma pontuação específica por objetivo e outra geral, para o conjunto dos 17 compromissos estabelecidos pela ONU em 2015.',
             'icone': ['fa-solid', 'fa-chart-simple']
         },
         {

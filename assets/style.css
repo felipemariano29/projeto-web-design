@@ -11,7 +11,7 @@
     --cor-principal-clara: #DDF2FF;
     --cor-principal-escura: #82C4FF;
     --cor-secundaria: #3F4756;
-    --cor-fundo: #F5F5F7;
+    --cor-fundo: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(223,222,222,1) 100%);
 
     /* Estilo das fontes */
     --fonte-principal: 'Lora', serif;
@@ -49,7 +49,6 @@ html, body { height: 100vh }
 html { scroll-behavior: smooth }
 
 body {
-    background-color: var(--cor-fundo);
     display: grid;
     grid-template-rows: repeat(6, 1fr);
 }
@@ -81,6 +80,7 @@ section {
     width: 100vw;
     display: grid;
     overflow: hidden;
+    background-color: var(--cor-fundo);
 }
 /* ==================================================================== */
 
@@ -194,7 +194,7 @@ header button i:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 140px;
-    background-color: var(--cor-principal-clara);
+    background: radial-gradient(circle, rgba(221,242,255,1) 0%, rgba(203,229,245,1) 100%);
 }
 
 #info article {
@@ -268,7 +268,7 @@ header button i:hover {
 
 #geral li:hover {
     background-color: var(--cor-principal-escura);
-    transform: scale(1.05);
+    transform: scale(1.0125);
     cursor: default;
 }
 
