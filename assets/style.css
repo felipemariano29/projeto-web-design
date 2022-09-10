@@ -635,151 +635,203 @@ footer button:active { transform: scale(0.95) }
 
 /* 1024 */
 
-@media screen and (min-width: 1025px) and (max-width: 1200px){
-    :root { /* Tamanho de Fontes */
-        --tamanho-logo: 172px;
-        --tamanho-titulo: 48px;
-        --tamanho-topico: 34px;
-        --tamanho-icone: 34px;
-        --tamanho-subtitulo: 22px;
-        --tamanho-texto-corrido: 18px;
+@media screen
+    and (min-width: 1025px)
+    and (max-width: 1200px) 
+    {
+        :root { /* Tamanho de Fontes */
+            --tamanho-logo: 172px;
+            --tamanho-titulo: 48px;
+            --tamanho-topico: 34px;
+            --tamanho-icone: 34px;
+            --tamanho-subtitulo: 22px;
+            --tamanho-texto-corrido: 18px;
+        }
+        #logo { width: 60vw }    
+        header article {
+            grid-template-rows: 4fr 1fr 2fr;
+            width: 70vw;
+            padding-top: 75px;
+            padding-left: 50px;
+        }
+        header aside figure { width: 70vw }
+        header nav {
+            width: 70vw;
+            column-gap: 15px;
+            top: calc(100% + 30px);
+            left: calc(50% - 35vw);
+        }
+        #info { row-gap: 30px }
+        #info article {
+            width: 40vw;
+            height: 40vh;
+        }
+        #geral { padding: 0 50px }
+        #geral img { width: 35vw }
+        #geral article { width: 45vw }
+        #geral ul { row-gap: 4vh }
+        #geral li {
+            height: 8vh;
+            padding: 0 2vw;
+        }
+        #ods ul {
+            width: 80vw;
+        }
+        #ods button {
+            width: 12vw;
+            height: 12vw;
+        }
+        #ods img {
+            width: 8vw;
+            height: 8vw;
+        }
+        #regiao {
+            width: 40vw;
+            height: 30vh;
+        }
+        #estado {
+            width: 80vw;
+            height: 30vh;
+        }
+        #ranking table {
+            width: 45vw;
+            height: 65vh;
+        }
+        #ranking tr { width: 45vw }
+        #topo-btn { width: 20vw }
+        footer nav {
+            width: 30vw;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+        nav a { width: 10vw }
+        footer form { width: 30vw }
     }
-    #logo { width: 60vw }    
-    header article {
-        grid-template-rows: 4fr 1fr 2fr;
-        width: 70vw;
-        padding-top: 75px;
-        padding-left: 50px;
-    }
-    header aside figure { width: 70vw }
-    header nav {
-        width: 70vw;
-        column-gap: 15px;
-        top: calc(100% + 30px);
-        left: calc(50% - 35vw);
-    }
-    #info { row-gap: 30px }
-    #info article {
-        width: 40vw;
-        height: 40vh;
-    }
-    #geral { padding: 0 50px }
-    #geral img { width: 35vw }
-    #geral article { width: 45vw }
-    #geral ul { row-gap: 4vh }
-    #geral li {
-        height: 8vh;
-        padding: 0 2vw;
-    }
-    #ods ul {
-        width: 80vw;
-    }
-    #ods button {
-        width: 12vw;
-        height: 12vw;
-    }
-    #ods img {
-        width: 8vw;
-        height: 8vw;
-    }
-    #regiao {
-        width: 40vw;
-        height: 30vh;
-    }
-    #estado {
-        width: 80vw;
-        height: 30vh;
-    }
-    #ranking table {
-        width: 45vw;
-        height: 65vh;
-    }
-    #ranking tr { width: 45vw }
-    #topo-btn { width: 20vw }
-    footer nav {
-        width: 30vw;
-        row-gap: 10px;
-        column-gap: 10px;
-    }
-    nav a { width: 10vw }
-    footer form { width: 30vw }
-}
 
 /* ================================================== */
 
 /* 768 */
 
-@media screen and (min-width: 768px){
-    :root { /* Tamanho de Fontes */
-        --tamanho-logo: 172px;
-        --tamanho-titulo: 42px;
-        --tamanho-topico: 28px;
-        --tamanho-icone: 22px;
-        --tamanho-subtitulo: 16px;
-        --tamanho-texto-corrido: 14px;
+@media screen
+    and (min-width: 769px)
+    and (max-width: 1024px)
+    {
+        :root { /* Tamanho de Fontes */
+            --tamanho-logo: 172px;
+            --tamanho-titulo: 42px;
+            --tamanho-topico: 28px;
+            --tamanho-icone: 22px;
+            --tamanho-subtitulo: 20px;
+            --tamanho-texto-corrido: 16px;
+        }
+        #logo { width: 50vw }  
+        header article {
+            grid-template-rows: 5fr 1fr 2fr;
+            width: 60vw;
+            padding: 140px 40px;
+        }
+        header aside figure {
+            width: 60vw;
+        }
+        header nav {
+            height: 5vh;
+            width: 78vw;
+            top: calc(100% + 30px);
+            left: calc(50% - 39vw);
+        }
+        header nav a { width: 12vw }
+        header button {
+            font-size: var(--tamanho-titulo);
+            left: calc(50vw - 20px);
+        }
+        #info article {
+            width: 45vw;
+            height: 30vh;
+        }
+        #geral {
+            padding: 0 2vw;
+            column-gap: 0;
+        }
+        #geral article, #geral aside { margin: 0 auto; }
+        #geral article { width: 45vw }
+        #geral img { width: 40vw }
+        #geral ul { row-gap: 2vh }
+        #geral li { padding: 0 2vw }
+        #ods {
+            padding: 0;
+            grid-template-rows: 4fr 7fr;
+        }
+        #ods article { height: 6vh }
+        #ods #titulo-ods { margin: 0 auto }
+        #ods ul {
+            width: 90vw;
+            height: 60vh;
+            margin-top: -14vh;
+            column-gap: 1vw;
+        }
+        #ods button {
+            width: 14vw;
+            height: 14vw;
+        }
+        #ods li img {
+            width: 10vw;
+            height: 10vw;
+        }
+        #ods li p { font-size: var(--tamanho-texto-corrido) }
+        #regiao {
+            width: 40vw;
+            height: 25vh;
+        }
+        #estado {
+            width: 80vw;
+            height: 25vh;
+        }
+        #ranking table {
+            width: 45vw;
+            height: 60vh;
+        }
+        #ranking tr {
+            width: 45vw;
+            height: 6vh;
+            align-items: center;
+        }
+        .pontuacao { padding-left: 1.5vw }
+        #topo-btn {
+            width: 18vw;
+            height: 6vh;
+            column-gap: 8px;
+        }
+        footer {
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 0 2vw;
+        }
+        footer article { row-gap: 2vw }
+        #topo-btn {
+            width: 26vw;
+        }
+        footer nav {
+            width: 36vw;
+            row-gap: 1vh;
+            column-gap: 1vw;
+        }
+        footer nav a {
+            width: 12vw;
+            height: 6vh;
+        }
+        footer form {
+            width: 26vw;
+            row-gap: 1vh;
+        }
     }
-    #logo { width: 50vw }    
-    header article {
-        grid-template-rows: 5fr 1fr 2fr;
-        width: 60vw;
-        padding: 140px 40px;
-    }
-    header nav {
-        height: 5vh;
-        width: 70vw;
-        top: calc(100% + 30px);
-        left: calc(50% - 35vw);
-    }
-    header nav a { width: 10vw }
-    header button {
-        font-size: 40px;
-        left: calc(50vw - 20px);
-    }
-    #ods li p { font-size: var(--tamanho-texto-corrido) }
-    #regiao {
-        width: 40vw;
-        height: 25vh;
-    }
-    #estado {
-        width: 75vw;
-        height: 25vh;
-    }
-    #ranking table {
-        width: 45vw;
-        height: 60vh;
-    }
-    #ranking tr {
-        width: 45vw;
-        height: 6vh;
-        padding-left: 28px;
-    }
-    .pontuacao { padding-left: 20px }
-    #topo-btn {
-        width: 18vw;
-        height: 6vh;
-        column-gap: 8px;
-    }
-    footer article { row-gap: 20px }
-    footer nav {
-        width: 32vw;
-        row-gap: 8px;
-        column-gap: 8px;
-    }
-    footer nav a {
-        width: 10vw;
-        height: 4vh;
-    }
-    footer form {
-        width: 24vw;
-        row-gap: 10px;
-    }
-}
 
 /* ================================================== */
 
 /* 480 */
 
-@media screen and (min-width: 480px){
+@media screen
+and (min-width: 480px)
+and (max-width: 768px)
+{
     :root { /* Tamanho de Fontes */
         --tamanho-logo: 172px;
         --tamanho-titulo: 42px;
