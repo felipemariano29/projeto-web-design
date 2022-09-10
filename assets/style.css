@@ -22,6 +22,7 @@
     --tamanho-titulo: 72px;
     --tamanho-topico: 48px;
     --tamanho-subtitulo: 34px;
+    --tamanho-icone: 34px;
     --tamanho-texto-corrido: 22px;
 
     /* Arredondamento da Borda */
@@ -79,8 +80,8 @@ section {
     height: 100vh;
     width: 100vw;
     display: grid;
-    overflow: hidden;
     background-color: var(--cor-fundo);
+    overflow: hidden;
 }
 /* ==================================================================== */
 
@@ -88,13 +89,14 @@ section {
 
 header nav {
     position: absolute;
-    width: 1050px;
+    width: 60vw;
     height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     top: calc(100% + 30px);
     left: calc(50% - 525px);
+    margin-top: 2vh;
 }
 
 nav a {
@@ -125,7 +127,7 @@ nav a:hover {
     position: fixed;
     top: 0;
     z-index: 100;
-    margin-top: 30px;
+    /* margin-top: 4vh; */
 }
 
 /* ==================================================================== */
@@ -134,28 +136,41 @@ nav a:hover {
 
 header {
     height: 100vh;
+    width: 100vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 200px 150px;
+    overflow: hidden;
+}
+
+header section {
+    display: flex;
 }
 
 #logo { 
-    width: 800px;
+    width: 40vw;
     filter: invert(55%) sepia(82%) saturate(2518%) hue-rotate(188deg) brightness(93%) contrast(86%);
 }
 
 header article {
     display: grid;
     grid-template-rows: 4fr 1fr 2fr;
+    padding-top: 200px;
+    padding-left: 150px;
     color: var(--cor-secundaria);
 }
 
-header aside figure img {
-    position: absolute;
-    top: calc(50vh - 450px);
-    left: 75vw;
-    width: 900px
+header aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -300px;
 }
+
+header aside figure { 
+    width: 45vw;
+}
+
+header aside figure img { width: 100% }
 
 header button {
     position: absolute;
@@ -193,7 +208,7 @@ header button i:hover {
 #info {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 140px;
+    padding-top: 14vh;
     background: radial-gradient(circle, rgba(221,242,255,1) 0%, rgba(203,229,245,1) 100%);
 }
 
@@ -217,7 +232,7 @@ header button i:hover {
 
 #info p { font-size: var(--tamanho-texto-corrido) }
 
-#info i { font-size: var(--tamanho-subtitulo) }
+#info i { font-size: var(--tamanho-icone) }
 
 /* ==================================================================== */
 
@@ -272,7 +287,7 @@ header button i:hover {
     cursor: default;
 }
 
-#geral p { font-size: 28px }
+#geral p { font-size: var(--tamanho-texto-corrido) }
 
 /* ==================================================================== */
 
@@ -280,23 +295,17 @@ header button i:hover {
 
 #ods {
     padding: 60px 0;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 2fr 3fr;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-#ods h3 {
-    color: var(--cor-principal-escura);
-    height: 50px;
-    margin-top: 30px;
-}
+#ods h3 { color: var(--cor-principal-escura) }
 
 #ods article p {
     color: var(--cor-principal);
-    height: 100px;
-    width: 1100px;
-    margin: 0 auto;
+    width: 80vw;
 }
 
 #ods ul {
@@ -400,8 +409,8 @@ header button i:hover {
     display: grid;
     grid-template-rows: 1fr;
     justify-content: center;
-    width: 600px;
-    height: 650px;
+    width: 30vw;
+    height: 65vh;
     border-radius: 20px;
     color: var(--cor-principal-clara);
     background-color: var(--cor-principal);
@@ -411,14 +420,14 @@ header button i:hover {
 
 #ranking p {
     font-weight: 600;
-    font-size: 24px;
+    font-size: var(--tamanho-texto-corrido);
 }
 
 #ranking tr {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    height: 65px;
-    width: 600px;
+    height: 6.5vh;
+    width: 30vw;
     padding-left: 50px;
     text-align: left;
     align-items: center;
@@ -452,6 +461,7 @@ footer {
     width: 100vw;
     background: radial-gradient(circle, rgba(65,143,222,1) 0%, rgba(61,136,212,1) 100%);
     color: var(--cor-principal-clara);
+    overflow: hidden;
 }
 
 footer article {
@@ -473,7 +483,7 @@ footer h4 { font-family: var(--fonte-texto) }
     column-gap: 15px;
     width: 300px;
     height: 80px;
-    font-size: var(--tamanho-topico);
+    font-size: var(--tamanho-icone);
     background-color: var(--cor-principal-clara);
     color: var(--cor-principal);
     border-radius: var(--arredondamento-borda-pq);
@@ -614,5 +624,222 @@ footer button:active { transform: scale(0.95) }
         -webkit-transform: translateY(-15px);
         -o-transform: translateY(-15px);
         transform: translateY(-15px);
+    }
+}
+
+/* ==================================================================== */
+
+/* MEDIA QUERYES */
+
+/* ================================================== */
+
+/* 1024 */
+
+@media screen and (min-width: 1025px) and (max-width: 1200px){
+    :root { /* Tamanho de Fontes */
+        --tamanho-logo: 172px;
+        --tamanho-titulo: 48px;
+        --tamanho-topico: 34px;
+        --tamanho-icone: 34px;
+        --tamanho-subtitulo: 22px;
+        --tamanho-texto-corrido: 18px;
+    }
+    #logo { width: 60vw }    
+    header article {
+        grid-template-rows: 4fr 1fr 2fr;
+        width: 70vw;
+        padding-top: 75px;
+        padding-left: 50px;
+    }
+    header aside figure { width: 70vw }
+    header nav {
+        width: 70vw;
+        column-gap: 15px;
+        top: calc(100% + 30px);
+        left: calc(50% - 35vw);
+    }
+    #info { row-gap: 30px }
+    #info article {
+        width: 40vw;
+        height: 40vh;
+    }
+    #geral { padding: 0 50px }
+    #geral img { width: 35vw }
+    #geral article { width: 45vw }
+    #geral ul { row-gap: 4vh }
+    #geral li {
+        height: 8vh;
+        padding: 0 2vw;
+    }
+    #ods ul {
+        width: 80vw;
+    }
+    #ods button {
+        width: 12vw;
+        height: 12vw;
+    }
+    #ods img {
+        width: 8vw;
+        height: 8vw;
+    }
+    #regiao {
+        width: 40vw;
+        height: 30vh;
+    }
+    #estado {
+        width: 80vw;
+        height: 30vh;
+    }
+    #ranking table {
+        width: 45vw;
+        height: 65vh;
+    }
+    #ranking tr { width: 45vw }
+    #topo-btn { width: 20vw }
+    footer nav {
+        width: 30vw;
+        row-gap: 10px;
+        column-gap: 10px;
+    }
+    nav a { width: 10vw }
+    footer form { width: 30vw }
+}
+
+/* ================================================== */
+
+/* 768 */
+
+@media screen and (min-width: 768px){
+    :root { /* Tamanho de Fontes */
+        --tamanho-logo: 172px;
+        --tamanho-titulo: 42px;
+        --tamanho-topico: 28px;
+        --tamanho-icone: 22px;
+        --tamanho-subtitulo: 16px;
+        --tamanho-texto-corrido: 14px;
+    }
+    #logo { width: 50vw }    
+    header article {
+        grid-template-rows: 5fr 1fr 2fr;
+        width: 60vw;
+        padding: 140px 40px;
+    }
+    header nav {
+        height: 5vh;
+        width: 70vw;
+        top: calc(100% + 30px);
+        left: calc(50% - 35vw);
+    }
+    header nav a { width: 10vw }
+    header button {
+        font-size: 40px;
+        left: calc(50vw - 20px);
+    }
+    #ods li p { font-size: var(--tamanho-texto-corrido) }
+    #regiao {
+        width: 40vw;
+        height: 25vh;
+    }
+    #estado {
+        width: 75vw;
+        height: 25vh;
+    }
+    #ranking table {
+        width: 45vw;
+        height: 60vh;
+    }
+    #ranking tr {
+        width: 45vw;
+        height: 6vh;
+        padding-left: 28px;
+    }
+    .pontuacao { padding-left: 20px }
+    #topo-btn {
+        width: 18vw;
+        height: 6vh;
+        column-gap: 8px;
+    }
+    footer article { row-gap: 20px }
+    footer nav {
+        width: 32vw;
+        row-gap: 8px;
+        column-gap: 8px;
+    }
+    footer nav a {
+        width: 10vw;
+        height: 4vh;
+    }
+    footer form {
+        width: 24vw;
+        row-gap: 10px;
+    }
+}
+
+/* ================================================== */
+
+/* 480 */
+
+@media screen and (min-width: 480px){
+    :root { /* Tamanho de Fontes */
+        --tamanho-logo: 172px;
+        --tamanho-titulo: 42px;
+        --tamanho-topico: 28px;
+        --tamanho-icone: 22px;
+        --tamanho-subtitulo: 16px;
+        --tamanho-texto-corrido: 14px;
+    }
+    #logo { width: 50vw }    
+    header article {
+        grid-template-rows: 5fr 1fr 2fr;
+        width: 60vw;
+        padding: 140px 40px;
+    }
+    header nav {
+        height: 5vh;
+        width: 70vw;
+        top: calc(100% + 30px);
+        left: calc(50% - 35vw);
+    }
+    header button {
+        font-size: 40px;
+        left: calc(50vw - 20px);
+    }
+    #ods li p { font-size: var(--tamanho-texto-corrido) }
+    #regiao {
+        width: 40vw;
+        height: 25vh;
+    }
+    #estado {
+        width: 75vw;
+        height: 25vh;
+    }
+    #ranking table {
+        width: 45vw;
+        height: 60vh;
+    }
+    #ranking tr {
+        width: 45vw;
+        height: 6vh;
+        padding-left: 28px;
+    }
+    .pontuacao { padding-left: 20px }
+    #topo-btn {
+        width: 18vw;
+        height: 6vh;
+        column-gap: 8px;
+    }
+    footer article { row-gap: 20px }
+    footer nav {
+        width: 32vw;
+        row-gap: 8px;
+        column-gap: 8px;
+    }
+    footer nav a {
+        width: 10vw;
+        height: 4vh;
+    }
+    footer form {
+        width: 24vw;
+        row-gap: 10px;
     }
 }

@@ -28,23 +28,30 @@ const
     tabelas = document.querySelectorAll(".tabelas"),
     informacoes = document.getElementById("info"),
     topicos = document.getElementById("topicos"),
-    topoBtn = document.getElementById("topo-btn"),
-    altura = 950;
+    topoBtn = document.getElementById("topo-btn");
+
+let
+    altura = window.innerHeight,
+    largura = window.innerWidth;
+
+window.addEventListener('resize', () => {
+    altura = window.innerHeight;
+    largura = window.innerWidth;
+})
 
 window.addEventListener("load", () => {document.documentElement.scrollTop = 0})
-setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura + 33});
+setaBaixo.addEventListener("click", () => {document.documentElement.scrollTop = altura});
 topoBtn.addEventListener("click", () => {document.documentElement.scrollTop = 0});
 
 function navbarFunc() {
-    let alt = altura + 33;
     navItens.forEach(e => {
         e.addEventListener('click', () => {
-            if(e.innerText==="Home") document.documentElement.scrollTop = 0*alt;
-            else if(e.innerText==="Info") document.documentElement.scrollTop = 1*alt;
-            else if(e.innerText==="Geral") document.documentElement.scrollTop = 2*alt;
-            else if(e.innerText==="ODS") document.documentElement.scrollTop = 3*alt;
-            else if(e.innerText==="Gráficos") document.documentElement.scrollTop = 4*alt;
-            else if(e.innerText==="Ranking") document.documentElement.scrollTop = 5*alt;
+            if(e.innerText==="Home") document.documentElement.scrollTop = 0*altura;
+            else if(e.innerText==="Info") document.documentElement.scrollTop = 1*altura;
+            else if(e.innerText==="Geral") document.documentElement.scrollTop = 2*altura;
+            else if(e.innerText==="ODS") document.documentElement.scrollTop = 3*altura;
+            else if(e.innerText==="Gráficos") document.documentElement.scrollTop = 4*altura;
+            else if(e.innerText==="Ranking") document.documentElement.scrollTop = 5*altura;
         })
     })
 };
@@ -60,23 +67,23 @@ function verificaAltura() {
         removeCorNav();
         navItens[0].classList.add("active");
     }
-    if(altura < window.scrollY && window.scrollY < (altura*2)){
+    if(altura <= window.scrollY && window.scrollY < (altura*2)){
         removeCorNav();
         navItens[1].classList.add("active");
     }
-    if((altura*2) < window.scrollY && window.scrollY < (altura*3)){
+    if((altura*2) <= window.scrollY && window.scrollY < (altura*3)){
         removeCorNav();
         navItens[2].classList.add("active");
     }
-    if((altura*3) < window.scrollY && window.scrollY < (altura*4)){
+    if((altura*3) <= window.scrollY && window.scrollY < (altura*4)){
         removeCorNav();
         navItens[3].classList.add("active");
     }
-    if((altura*4) < window.scrollY && window.scrollY < (altura*5)){
+    if((altura*4) <= window.scrollY && window.scrollY < (altura*5)){
         removeCorNav();
         navItens[4].classList.add("active");
     }
-    if((altura*5) < window.scrollY && window.scrollY < (altura*6)){
+    if((altura*5) <= window.scrollY && window.scrollY < (altura*6)){
         removeCorNav();
         navItens[5].classList.add("active");
     }
