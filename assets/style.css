@@ -127,7 +127,7 @@ nav a:hover {
     position: fixed;
     top: 0;
     z-index: 100;
-    /* margin-top: 4vh; */
+    margin-top: 4vh;
 }
 
 /* ==================================================================== */
@@ -633,7 +633,101 @@ footer button:active { transform: scale(0.95) }
 
 /* ================================================== */
 
-/* 1024 */
+/* 1200 */
+
+@media screen
+    and (min-width: 1200px)
+    {
+        :root { /* Tamanho de Fontes */
+            --tamanho-logo: 172px;
+            --tamanho-titulo: 48px;
+            --tamanho-topico: 34px;
+            --tamanho-icone: 34px;
+            --tamanho-subtitulo: 22px;
+            --tamanho-texto-corrido: 18px;
+        }
+        #logo { width: 50vw }    
+        header article {
+            grid-template-rows: 4fr 1fr 2fr;
+            width: 70vw;
+            padding-top: 75px;
+            padding-left: 50px;
+        }
+        header aside figure { width: 50vw }
+        header nav {
+            width: 70vw;
+            column-gap: 15px;
+            top: calc(100% + 15px);
+            left: calc(50% - 35vw);
+        }
+        #info {
+            row-gap: 20px;
+            padding-top: 18vh;
+        }
+        #info article {
+            width: 45vw;
+            height: 30vh;
+        }
+        #geral { padding: 0 60px }
+        #geral img { width: 30vw }
+        #geral article { width: 45vw }
+        #geral ul { row-gap: 4vh }
+        #geral li {
+            height: 8vh;
+            padding: 0 2vw;
+        }
+        #ods ul {
+            width: 55vw;
+            height: 60vh;
+        }
+        #ods button {
+            width: 8vw;
+            height: 8vw;
+        }
+        #ods img {
+            width: 4vw;
+            height: 4vw;
+        }
+        #ods li p {
+            font-size: 16px;
+        }
+        #regiao {
+            width: 40vw;
+            height: 25vh;
+        }
+        #estado {
+            width: 80vw;
+            height: 25vh;
+        }
+        #ranking table {
+            width: 40vw;
+            height: 65vh;
+        }
+        #ranking tr { width: 40vw }
+        #topo-btn { width: 20vw }
+        footer nav {
+            width: 30vw;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+        nav a { width: 10vw }
+        footer {
+            height: 60vh;
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 0 30px;
+        }
+        footer article {
+            row-gap: 20px;
+        }
+        footer form {
+            width: 30vw;
+            row-gap: 15px;
+        }
+    }
+
+/* ================================================== */
+
+/* 1200 */
 
 @media screen
     and (min-width: 1025px)
@@ -647,26 +741,29 @@ footer button:active { transform: scale(0.95) }
             --tamanho-subtitulo: 22px;
             --tamanho-texto-corrido: 18px;
         }
-        #logo { width: 60vw }    
+        #logo { width: 50vw }    
         header article {
             grid-template-rows: 4fr 1fr 2fr;
             width: 70vw;
             padding-top: 75px;
             padding-left: 50px;
         }
-        header aside figure { width: 70vw }
+        header aside figure { width: 60vw }
         header nav {
             width: 70vw;
             column-gap: 15px;
             top: calc(100% + 30px);
             left: calc(50% - 35vw);
         }
-        #info { row-gap: 30px }
+        #info {
+            row-gap: 20px;
+            padding-top: 18vh;
+        }
         #info article {
             width: 40vw;
             height: 40vh;
         }
-        #geral { padding: 0 50px }
+        #geral { padding: 0 40px }
         #geral img { width: 35vw }
         #geral article { width: 45vw }
         #geral ul { row-gap: 4vh }
@@ -675,15 +772,16 @@ footer button:active { transform: scale(0.95) }
             padding: 0 2vw;
         }
         #ods ul {
-            width: 80vw;
+            width: 75vw;
+            height: 60vh;
         }
         #ods button {
-            width: 12vw;
-            height: 12vw;
+            width: 10vw;
+            height: 10vw;
         }
         #ods img {
-            width: 8vw;
-            height: 8vw;
+            width: 6vw;
+            height: 6vw;
         }
         #regiao {
             width: 40vw;
@@ -694,10 +792,10 @@ footer button:active { transform: scale(0.95) }
             height: 30vh;
         }
         #ranking table {
-            width: 45vw;
+            width: 40vw;
             height: 65vh;
         }
-        #ranking tr { width: 45vw }
+        #ranking tr { width: 40vw }
         #topo-btn { width: 20vw }
         footer nav {
             width: 30vw;
@@ -705,12 +803,23 @@ footer button:active { transform: scale(0.95) }
             column-gap: 10px;
         }
         nav a { width: 10vw }
-        footer form { width: 30vw }
+        footer {
+            height: 60vh;
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 0 30px;
+        }
+        footer article {
+            row-gap: 20px;
+        }
+        footer form {
+            width: 30vw;
+            row-gap: 15px;
+        }
     }
 
 /* ================================================== */
 
-/* 768 */
+/* 1024 */
 
 @media screen
     and (min-width: 769px)
@@ -734,7 +843,7 @@ footer button:active { transform: scale(0.95) }
             width: 60vw;
         }
         header nav {
-            height: 5vh;
+            height: 6vh;
             width: 78vw;
             top: calc(100% + 30px);
             left: calc(50% - 39vw);
@@ -758,10 +867,10 @@ footer button:active { transform: scale(0.95) }
         #geral ul { row-gap: 2vh }
         #geral li { padding: 0 2vw }
         #ods {
-            padding: 0;
+            padding: 1vh 0 0;
             grid-template-rows: 4fr 7fr;
         }
-        #ods article { height: 6vh }
+        #ods article { height: 14vh }
         #ods #titulo-ods { margin: 0 auto }
         #ods ul {
             width: 90vw;
@@ -770,12 +879,12 @@ footer button:active { transform: scale(0.95) }
             column-gap: 1vw;
         }
         #ods button {
-            width: 14vw;
-            height: 14vw;
+            width: 12vw;
+            height: 12vw;
         }
         #ods li img {
-            width: 10vw;
-            height: 10vw;
+            width: 6vw;
+            height: 6vw;
         }
         #ods li p { font-size: var(--tamanho-texto-corrido) }
         #regiao {
@@ -826,37 +935,111 @@ footer button:active { transform: scale(0.95) }
 
 /* ================================================== */
 
-/* 480 */
+/* 768 */
 
 @media screen
-and (min-width: 480px)
+and (min-width: 481px)
 and (max-width: 768px)
 {
     :root { /* Tamanho de Fontes */
         --tamanho-logo: 172px;
-        --tamanho-titulo: 42px;
-        --tamanho-topico: 28px;
+        --tamanho-titulo: 30px;
+        --tamanho-topico: 24px;
         --tamanho-icone: 22px;
         --tamanho-subtitulo: 16px;
-        --tamanho-texto-corrido: 14px;
+        --tamanho-texto-corrido: 18px;
     }
-    #logo { width: 50vw }    
+    #logo { width: 60vw }    
     header article {
         grid-template-rows: 5fr 1fr 2fr;
         width: 60vw;
         padding: 140px 40px;
     }
+    header aside figure {
+        margin-left: 6vw;
+    }
+    header aside figure img {
+        width: 90vw;
+    }
     header nav {
         height: 5vh;
-        width: 70vw;
+        width: 90vw;
         top: calc(100% + 30px);
-        left: calc(50% - 35vw);
+        left: calc(50% - 45vw);
+    }
+    nav a {
+        width: 14vw;
+        font-size: var(--tamanho-subtitulo);
     }
     header button {
-        font-size: 40px;
+        font-size: var(--tamanho-titulo);
         left: calc(50vw - 20px);
     }
-    #ods li p { font-size: var(--tamanho-texto-corrido) }
+    #info {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center;
+        justify-content: center; */
+    }
+    #info article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 20vh;
+    }
+    #info head {
+        margin-bottom: 4px;
+    }
+    #info h3, #info i {
+        font-size: var(--tamanho-texto-corrido);
+    }
+    #info p {
+        font-size: 12px;
+    }
+    #geral { grid-template-columns: 1fr; }
+    #geral img {
+        display: none;
+    }
+    #geral {
+        column-gap: 10px;
+        padding: 0 20px;
+    }
+    #geral article {
+        width: 90vw;
+        height: 80vh;
+        margin: 0 auto;
+        row-gap: 40px;
+    }
+    #geral ul {
+        row-gap: 34px;
+    }
+    #geral li {
+        padding: 0 14px;
+    }
+    #titulo-ods {
+        margin-bottom: 120px;
+    }
+    #ods article p { margin: 0 auto 5px; }
+    #ods ul {
+        grid-template-columns: repeat(5, 1fr);
+        width: 80vw;
+        height: 50vh;
+        margin-top: -260px;
+        row-gap: 14px;
+        column-gap: 14px;
+    }
+    #ods button {
+        font-size: var(--tamanho-texto-corrido);
+        width: 14vw;
+        height: 14vw;
+    }
+    #ods img {
+        width: 8vw;
+        height: 8vw;
+    }
+    #ods li p { font-size: 14px }
     #regiao {
         width: 40vw;
         height: 25vh;
@@ -865,33 +1048,250 @@ and (max-width: 768px)
         width: 75vw;
         height: 25vh;
     }
+    #ranking {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #ranking article:last-child {
+        display: none;
+    }
     #ranking table {
-        width: 45vw;
-        height: 60vh;
+        width: 80vw;
+        height: 70vh;
     }
     #ranking tr {
-        width: 45vw;
-        height: 6vh;
+        width: 80vw;
+        height: 7vh;
         padding-left: 28px;
     }
     .pontuacao { padding-left: 20px }
+    footer {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 100vh;
+        padding-bottom: 6vh;
+    }
     #topo-btn {
-        width: 18vw;
+        width: 80vw;
         height: 6vh;
         column-gap: 8px;
     }
     footer article { row-gap: 20px }
     footer nav {
-        width: 32vw;
-        row-gap: 8px;
-        column-gap: 8px;
+        width: 76vw;
+        margin-bottom: 6vh;
+        row-gap: 10px;
+        column-gap: 10px;
     }
     footer nav a {
-        width: 10vw;
-        height: 4vh;
+        width: 24vw;
+        height: 8vh;
     }
     footer form {
-        width: 24vw;
+        width: 80vw;
         row-gap: 10px;
+    }
+}
+
+/* ================================================== */
+
+/* 480 */
+
+@media screen
+and (min-width: 321px)
+and (max-width: 480px)
+{
+    :root { /* Tamanho de Fontes */
+        --tamanho-logo: 172px;
+        --tamanho-titulo: 20px;
+        --tamanho-topico: 16px;
+        --tamanho-icone: 16px;
+        --tamanho-subtitulo: 12px;
+        --tamanho-texto-corrido: 9px;
+    }
+    header {
+        height: 100vh;
+        width: 100vw;
+    }
+    header section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #logo {
+        width: 60vw;
+    }    
+    header article {
+        grid-template-rows: 3fr 1fr 1fr;
+        width: 40vw;
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding-top: 80px; 
+        padding-left: 100px;
+    }
+    header article figure {
+        display: flex;
+        margin-bottom: 100px;
+    }
+    header article p {
+        height: 10vh;
+    }
+    header aside {
+        width: 50vw;
+    }
+    header aside figure {
+        display: flex;
+        justify-content: left;
+        align-items: center;    
+        margin-left: 10px;
+    }
+    header aside figure img {
+        width: 100vw;
+    }
+    header nav {
+        left: 1000;
+    }
+    nav a {
+        width: 10vw;
+        font-size: var(--tamanho-subtitulo);
+    }
+    header button {
+        font-size: var(--tamanho-titulo);
+        left: calc(50vw - 10px);
+        top: 80vh;
+    }
+    #info {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+        align-items: center;
+        justify-content: center;
+    }
+    #info article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 22vh;
+    }
+    #info head {
+        margin-bottom: 4px;
+    }
+    #info h3, #info i {
+        font-size: var(--tamanho-subtitulo);
+    }
+    #info p {
+        font-size: var(--tamanho-texto-corrido);
+    }
+    #geral { grid-template-columns: 1fr; }
+    #geral img {
+        display: none;
+    }
+    #geral {
+        column-gap: 10px;
+        padding: 0 20px;
+    }
+    #geral article {
+        width: 90vw;
+        height: 80vh;
+        margin: 0 auto;
+        row-gap: 40px;
+    }
+    #geral ul {
+        row-gap: 16px;
+    }
+    #geral li {
+        padding: 0 10px;
+    }
+    #geral p {
+        font-size: var(--tamanho-subtitulo);
+    }
+    #ods article p { margin: 0 auto 5px; }
+    #ods ul {
+        grid-template-columns: repeat(3, 1fr);
+        width: 70vw;
+        height: 70vh;
+    }
+    #ods button {
+        font-size: var(--tamanho-texto-corrido);
+        width: 14vw;
+        height: 14vw;
+    }
+    #ods img {
+        width: 6vw;
+        height: 6vw;
+    }
+    #ods li p { font-size: 10px }
+    #graficos {
+        padding: 0;
+    }
+    #graficos h3 {
+        margin-top: 10px;
+    }
+    #graficos article {
+        height: 50vh;
+    }
+    #graficos div {
+        height: 40vh;
+    }
+    #regiao {
+        width: 50vw;
+        height: 30vh;
+    }
+    #estado {
+        width: 80vw;
+        height: 30vh;
+    }
+    #ranking {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    #ranking article:last-child {
+        display: none;
+    }
+    #ranking table {
+        width: 80vw;
+        height: 70vh;
+    }
+    #ranking tr {
+        width: 80vw;
+        height: 7vh;
+        padding-left: 16px;
+    }
+    #ranking p {
+        font-size: var(--tamanho-subtitulo);
+    }
+    .pontuacao { padding-left: 12px }
+    footer {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 100vh;
+        padding-bottom: 6vh;
+    }
+    #topo-btn {
+        width: 80vw;
+        height: 6vh;
+        column-gap: 4px;
+    }
+    footer article { row-gap: 8px }
+    footer nav {
+        width: 76vw;
+        margin-bottom: 2vh;
+        row-gap: 6px;
+        column-gap: 6px;
+    }
+    footer nav a {
+        width: 24vw;
+        height: 8vh;
+    }
+    footer form {
+        width: 80vw;
+        row-gap: 8px;
     }
 }

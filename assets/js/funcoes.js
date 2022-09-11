@@ -199,8 +199,15 @@ function desenhaGrafico() {
             options: {
                 scales: {
                             y: {
-                                beginAtZero: false
+                                beginAtZero: false,
+                                },
+                            x: {
+                                ticks: {
+                                    font: {
+                                        size: 4
+                                    }
                                 }
+                                },
                         },
                 responsive: true,
                 maintainAspectRatio: false,
