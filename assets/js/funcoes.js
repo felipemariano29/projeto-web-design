@@ -194,7 +194,7 @@ function desenhaGrafico() {
                                 beginAtZero: false
                                 }
                         },
-                responsive: true,
+                responsive: false,
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
