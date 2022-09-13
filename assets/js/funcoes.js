@@ -209,7 +209,7 @@ function desenhaGrafico() {
                                 }
                                 },
                         },
-                responsive: true,
+                responsive: false,
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
